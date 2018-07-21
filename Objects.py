@@ -27,7 +27,7 @@ class Car:
         self.speed -= 2;
 
 class Lambo(Car):
-    __rapper = ""
+    __rapper = " "
 
     def __init__(self, speed, color, rapper):
         self.__rapper = rapper
