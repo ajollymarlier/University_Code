@@ -30,8 +30,8 @@ class Lambo(Car):
     __rapper = " "
 
     def __init__(self, speed, color, rapper):
+        Car.__init__(self, speed, color)
         self.__rapper = rapper
-        super(Car, self).__init__(speed, color)
 
 
 
@@ -52,8 +52,10 @@ def doStuff():
         os.system('cls')
 
     huracan = Lambo(4, "Purple", "KSI")
+    huracan.deccelerate()
 
     print(huracan.getColor())
+    print(huracan.getSpeed())
 
 doStuff()
 
