@@ -1,3 +1,5 @@
+import python_ta
+
 """CSC148 - Welcome file
 
 Welcome to CSC148! This is a sample Python file that you should be able to
@@ -19,12 +21,20 @@ def greet(name: str) -> str:
     >>> greet('David')
     'Hello, David! Welcome to CSC148. Hope you have a great time this term. :)'
     """
+
     return (f'Hello, {name}! Welcome to CSC148. ' +
             'Hope you have a great time this term. :)')
+
+    # If statement is meant for running code only if
+    # .py file is being run as a script
+    # If the .py file is being imported into another script,
+    # the code block won't run
 
 
 if __name__ == '__main__':
     print(greet(MY_NAME))
+
+python_ta.check_all()
 
     # This will run our code checking tool, python_ta.
     # You should have downloaded and installed this library in PyCharm
