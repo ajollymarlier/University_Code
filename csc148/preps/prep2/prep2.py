@@ -38,15 +38,15 @@ class Spinner:
     0
 
     Spinning the spinner:
-    >>> s.spin(4)
-    >>> s.position
-    4
-    >>> s.spin(2)
-    >>> s.position
-    6
-    >>> s.spin(2)
+    >>> s.spin(0)
     >>> s.position
     0
+    >>> s.spin(2)
+    >>> s.position
+    2
+    >>> s.spin(2)
+    >>> s.position
+    4
     """
     slots: int
     position: int

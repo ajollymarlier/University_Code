@@ -1,4 +1,3 @@
 [
-  "prep2_sample_test.py::test_new_spinner_position",
-  "prep2_sample_test.py::test_doctest"
+  "prep2_sample_test.py::test_new_spinner_position"
 ]

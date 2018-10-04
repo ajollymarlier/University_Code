@@ -1,0 +1,29 @@
+- Simulation runs on a round basis and elevators can move up or down one every round
+
+People
+    - Person contains started_floor, destination_floor, and number of rounds waiting
+    - Person's wait time increases when they're waiting on a floor and when they're in an elevator
+
+Elevators
+    - Elevators can move up or down one every round
+    - They have a capacity and cannot board new people when the capacity is met
+
+People Generation
+    - Placement of people can be randomly generated on startup from a fixed amount
+    - Their starting and target floor are all all random, but starting and target floor cannot be the same
+    - People can also be generated from data in a csv file
+    - Each line of the file represents all the arrivals for a certain round number
+    - After the first number which signifies the round in which the rest of the line occurs,
+      their is an even number of entries with the first number in the pair is the starting floor,
+      and the second is the target floor
+
+    1, 1, 4, 5, 3
+
+    Description:
+    - Round 1: one person whose starting floor is 1 and target floor is 4, and
+      another person whose starting floor is 5 and target floor is 3, in that order
+
+
+
+
+

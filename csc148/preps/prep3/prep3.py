@@ -21,10 +21,12 @@ class Employee:
     id_: This employee's ID number.
     name: This employee's name.
     total_amount_paid: The total amount of money that an employee has been paid
+    personal_days_taken: Number of personal days taken in a year by the employee
     """
     id_: int
     name: str
     total_amount_paid: float
+    personal_days_taken: int
 
     def __init__(self, id_: int, name: str) -> None:
         """Initialize this employee.
@@ -66,6 +68,15 @@ class Employee:
         300.0
         """
         return self.total_amount_paid
+
+    def take_personal_day(self) -> None:
+        '''This Employee takes a personal day
+        '''
+
+        if(self.personal_days_taken < 10):
+            self.personal_days_taken += 1
+        else:
+            print('Come see me in my office')
 
 
 class SalariedEmployee(Employee):
@@ -149,6 +160,17 @@ class HourlyEmployee(Employee):
         """
         return round(self.hours_per_month * self.hourly_wage, 2)
 
+    def take_personal_day(self):
+        '''Overwrites the Super class method to add an
+        effect on the hours worked for this employee
+        '''
+
+        Employee.take_personal_day(self)
+        if self.hours_per_month > 8:
+            self.hours_per_month -= 8
+        else:
+            self.hours_per_month = 0
+
 
 class Company:
     """A company with employees.
@@ -186,6 +208,16 @@ class Company:
             total_salary += employee.total_amount_paid
 
         return total_salary
+
+    def reset_personal_days(self) -> None:
+        '''This method resets all personal_days_taken for every employee
+        in the company
+
+        This method will be run on January 1st at Midnight every year
+        '''
+
+        for employee in range(self.employees):
+            employee.personal_days_taken = 0
 
 
 if __name__ == '__main__':
