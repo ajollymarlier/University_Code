@@ -58,7 +58,7 @@ class Simulation:
         self.num_floors = config['num_floors']
         self.waiting = {}
 
-        #Populates self.elevators with number if elevators needed
+        # Populates self.elevators with number if elevators needed
         i = 0
         while i < config['num_elevators']:
             self.elevators.append(Elevator(config['elevator_capacity']))

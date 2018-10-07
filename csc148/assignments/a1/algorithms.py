@@ -78,7 +78,7 @@ class RandomArrivals(ArrivalGenerator):
     Hint: look up the 'sample' function from random.
     """
 
-    # TODO Under Construction
+    # TODO CHECK IF THIS IS WORKING
     def generate(self, round_num: int) -> Dict[int, List[Person]]:
         """Return the new arrivals for the simulation at the given round.
 
@@ -87,13 +87,46 @@ class RandomArrivals(ArrivalGenerator):
 
         You can choose whether to include floors where no people arrived.
         """
+        # TODO Use random.sample later
+        # TODO What are we supposed to use round_num for
+        # TODO May have to edit existing dict instead of
+        # TODO creating a new one every generation
+        arriving_people = {}
+        for i in range(self.max_floor):
+            arriving_people[i] = []
 
+        for i in range(self.num_people):
+            chosen_floor = random.randint(0, self.max_floor - 1)
+            arriving_people[chosen_floor].append(
+                Person(chosen_floor, self._get_target(chosen_floor)))
 
+        return arriving_people
+
+    def _get_target(self, start_floor: int) -> int:
+        """Helper Method for finding a target floor that is not the same
+        as the Person start floor
+
+        === Precondition ===
+        start_floor >= 0 and <= max_floor - 1"""
+
+        target = start_floor
+        while target == start_floor:
+            target = random.randint(0, self.max_floor - 1)
+
+        return target
 
 
 class FileArrivals(ArrivalGenerator):
     """Generate arrivals from a CSV file.
+
+    === Attributes ===
+    arrivals: a dictionary with key: round_num
+        and value: list of people arriving
     """
+
+    # TODO what to do with this dictionary
+    arrivals: dict[int, Person]
+
     def __init__(self, max_floor: int, filename: str) -> None:
         """Initialize a new FileArrivals algorithm from the given file.
 
@@ -106,16 +139,29 @@ class FileArrivals(ArrivalGenerator):
         """
         ArrivalGenerator.__init__(self, max_floor, None)
 
+        #Instantiates and populates dict with empty list for each round num
+        arrivals = {}
+        for i in range(self.max_floor):
+            arrivals[i] = []
+
         # We've provided some of the "reading from csv files" boilerplate code
         # for you to help you get started.
         with open(filename) as csvfile:
             reader = csv.reader(csvfile)
             for line in reader:
-                # TODO: complete this. <line> is a list of strings corresponding
+                # <line> is a list of strings corresponding
                 # to one line of the original file.
                 # You'll need to convert the strings to ints and then process
                 # and store them.
-                pass
+
+                arrival_round = int(line[0])
+                i = 1
+                while i < len(line):
+                    arrivals[arrival_round].append(
+                        Person(int(line[i]), int(line[i + 1])))
+                    i += 2
+
+                # TODO check what to do with dict
 
 
 ###############################################################################

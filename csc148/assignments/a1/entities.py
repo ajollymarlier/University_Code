@@ -56,7 +56,7 @@ class Elevator(ElevatorSprite):
             The value returned should be a float between 0.0 (completely empty) and
             1.0 (completely full).
             """
-        
+
         return self.capacity / len(self.passengers)
 
 
@@ -77,13 +77,14 @@ class Person(PersonSprite):
     target: int
     wait_time: int
 
-    def __init__(self, start: int, target: int, wait_time: int) -> None:
+    def __init__(self, start: int, target: int) -> None:
         """Creates new instance of Person"""
 
         # TODO potentially should raise exception if RIs are violated
+        PersonSprite.__init__(self)
         self.start = start
         self.target = target
-        self.wait_time = wait_time
+        self.wait_time = 0
 
     def get_anger_level(self) -> int:
         """Return this person's anger level.

@@ -533,13 +533,13 @@ footer {
     <body>
         <header>
             <h1 class="title">PyTA Error Report</h1>
-            <time>Thu. Oct. 04 2018, 09:53:10 AM</time>
+            <time>Thu. Oct. 04 2018, 01:12:06 PM</time>
         </header>
         <main>
             
             <section>
                 <article class="file-name">
-                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/entities.py </h2>
+                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/simulation.py </h2>
                 </article>
                 <article class="error-output code-errors">
                     <h3 class="category-heading">
@@ -565,9 +565,95 @@ footer {
                     </h3>
                     <div class="content collapsible">
                         
-                        <span class="empty-placeholder">None!
+                        <div class="error-instance">
 
-</span>
+                            <div class="info">
+                                <span class="error-link style-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;R0201" target="_blank">&#10064; R0201 (no-self-use)</a>
+                                </span>
+                                <span class="occurrences">
+                                1
+                                
+                                 occurrence.
+                                
+                                </span>
+                                <span class="shown">
+                                
+                                </span>
+                                <span class="slider">
+                                   <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 130] Method could be a function
+                                    </h4>
+                                    
+                                    <code>  <span class="grey line-num">128</span>      <span class="grey"><span class="pygments-c1"># Statistics calculations</span></span>
+  <span class="grey line-num">129</span>      <span class="grey"><span class="pygments-c1">############################################################################</span></span>
+  <span class="gbold line-num">130</span>      <span class="black"></span><span class="highlight-pyta"><span class="pygments-k">def</span> <span class="pygments-nf">_calculate_stats</span><span class="pygments-p">(</span><span class="pygments-bp">self</span><span class="pygments-p">)</span> <span class="pygments-o">-&gt;</span> <span class="pygments-n">Dict</span><span class="pygments-p">[</span><span class="pygments-nb">str</span><span class="pygments-p">,</span> <span class="pygments-nb">int</span><span class="pygments-p">]:</span></span>
+  <span class="gbold line-num">131</span>          <span class="highlight-pyta"><span class="pygments-s2">&quot;&quot;&quot;Report the statistics for the current run of this simulation.</span></span>
+  <span class="gbold line-num">132</span>          <span class="highlight-pyta"><span class="pygments-s2">&quot;&quot;&quot;</span></span>
+  <span class="gbold line-num">133</span>          <span class="highlight-pyta"><span class="pygments-k">return</span> <span class="pygments-p">{</span></span>
+  <span class="gbold line-num">134</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;num_iterations&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span><span class="pygments-p">,</span></span>
+  <span class="gbold line-num">135</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;total_people&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span><span class="pygments-p">,</span></span>
+  <span class="gbold line-num">136</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;people_completed&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span><span class="pygments-p">,</span></span>
+  <span class="gbold line-num">137</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;max_time&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span><span class="pygments-p">,</span></span>
+  <span class="gbold line-num">138</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;min_time&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span><span class="pygments-p">,</span></span>
+  <span class="gbold line-num">139</span>              <span class="highlight-pyta"><span class="pygments-s1">&#39;avg_time&#39;</span><span class="pygments-p">:</span> <span class="pygments-mi">0</span></span>
+  <span class="gbold line-num">140</span>          <span class="highlight-pyta"><span class="pygments-p">}</span></span>
+  <span class="grey line-num">141</span>  <span class="grey"></span>
+  <span class="grey line-num">142</span>  <span class="grey"></span>
+</code>
+                                    
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        
+                        <div class="error-instance">
+
+                            <div class="info">
+                                <span class="error-link style-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;W0611" target="_blank">&#10064; W0611 (unused-import)</a>
+                                </span>
+                                <span class="occurrences">
+                                1
+                                
+                                 occurrence.
+                                
+                                </span>
+                                <span class="shown">
+                                
+                                </span>
+                                <span class="slider">
+                                   <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 22] Unused Direction imported from algorithms
+                                    </h4>
+                                    
+                                    <code>   <span class="grey line-num">20</span>  <span class="grey"></span>
+   <span class="grey line-num">21</span>  <span class="grey"><span class="pygments-kn">import</span> <span class="pygments-nn">algorithms</span></span>
+   <span class="gbold line-num">22</span>  <span class="highlight-pyta"><span class="pygments-kn">from</span> <span class="pygments-nn">algorithms</span> <span class="pygments-kn">import</span> <span class="pygments-n">Direction</span></span>
+   <span class="grey line-num">23</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">entities</span> <span class="pygments-kn">import</span> <span class="pygments-n">Person</span><span class="pygments-p">,</span> <span class="pygments-n">Elevator</span></span>
+   <span class="grey line-num">24</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">visualizer</span> <span class="pygments-kn">import</span> <span class="pygments-n">Visualizer</span></span>
+</code>
+                                    
+                                </div>
+                                
+                            </div>
+
+                        </div>
                         
                     </div>
                 </article>
