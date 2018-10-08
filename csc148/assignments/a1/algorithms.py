@@ -88,9 +88,7 @@ class RandomArrivals(ArrivalGenerator):
         You can choose whether to include floors where no people arrived.
         """
         # TODO Use random.sample later
-        # TODO What are we supposed to use round_num for
-        # TODO May have to edit existing dict instead of
-        # TODO creating a new one every generation
+        # TODO have to create key of round_num
         arriving_people = {}
         for i in range(self.max_floor):
             arriving_people[i] = []
@@ -117,15 +115,7 @@ class RandomArrivals(ArrivalGenerator):
 
 
 class FileArrivals(ArrivalGenerator):
-    """Generate arrivals from a CSV file.
-
-    === Attributes ===
-    arrivals: a dictionary with key: round_num
-        and value: list of people arriving
-    """
-
-    # TODO what to do with this dictionary
-    arrivals: dict[int, Person]
+    """Generate arrivals from a CSV file."""
 
     def __init__(self, max_floor: int, filename: str) -> None:
         """Initialize a new FileArrivals algorithm from the given file.
@@ -139,10 +129,13 @@ class FileArrivals(ArrivalGenerator):
         """
         ArrivalGenerator.__init__(self, max_floor, None)
 
-        #Instantiates and populates dict with empty list for each round num
-        arrivals = {}
+    # TODO Might need to use max_floor
+    # TODO need to check this
+    def generate(self, filename: int) -> Dict[int, List[Person]]:
+        # Instantiates and populates dict with empty list for each round num
+        arriving_people = {}
         for i in range(self.max_floor):
-            arrivals[i] = []
+            arriving_people[i] = []
 
         # We've provided some of the "reading from csv files" boilerplate code
         # for you to help you get started.
@@ -157,11 +150,11 @@ class FileArrivals(ArrivalGenerator):
                 arrival_round = int(line[0])
                 i = 1
                 while i < len(line):
-                    arrivals[arrival_round].append(
+                    arriving_people[arrival_round].append(
                         Person(int(line[i]), int(line[i + 1])))
                     i += 2
 
-                # TODO check what to do with dict
+        return arriving_people
 
 
 ###############################################################################

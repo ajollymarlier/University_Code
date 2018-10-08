@@ -106,8 +106,10 @@ class Simulation:
         return self._calculate_stats()
 
     def _generate_arrivals(self, round_num: int) -> None:
-        """Generate and visualize new arrivals."""
-        pass
+        for key, value in self.arrival_generator.generate().items():
+            for person in value:
+                self.waiting[key].append(person)
+
 
     def _handle_leaving(self) -> None:
         """Handle people leaving elevators."""

@@ -4,11 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="Added some preps and part of a1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="Pushing more a1 stuff">
       <change beforePath="$PROJECT_DIR$/assignments/a1/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/algorithms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/a1/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/a1/pyta_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/pyta_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/a1/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/simulation.py" afterDir="false" />
     </list>
     <ignored path="csc148.iws" />
@@ -100,14 +97,14 @@
         <counts>
           <entry key="Python Console" value="130" />
           <entry key="dummy" value="24" />
-          <entry key="py" value="14019" />
-          <entry key="txt" value="1419" />
+          <entry key="py" value="14705" />
+          <entry key="txt" value="1440" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1443" />
-          <entry key="Python" value="14149" />
+          <entry key="PLAIN_TEXT" value="1464" />
+          <entry key="Python" value="14835" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -116,7 +113,7 @@
           <entry key="html" value="5" />
           <entry key="md" value="2" />
           <entry key="nodeids" value="2" />
-          <entry key="py" value="53" />
+          <entry key="py" value="55" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -125,7 +122,7 @@
           <entry key="HTML" value="5" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="53" />
+          <entry key="Python" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -136,55 +133,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
+        <entry file="file://$PROJECT_DIR$/preps/prep5/prep5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+            <state relative-caret-position="3059">
+              <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/entities.py">
+        <entry file="file://$PROJECT_DIR$/preps/prep5/prep5_sample_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <marker date="1538673380811" expanded="true" signature="2664:2905" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/sprites.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1862">
-              <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/visualizer.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/ideas.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="285">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -229,6 +191,7 @@
         <option value="$PROJECT_DIR$/assignments/a1/entities.py" />
         <option value="$PROJECT_DIR$/assignments/a1/simulation.py" />
         <option value="$PROJECT_DIR$/assignments/a1/algorithms.py" />
+        <option value="$PROJECT_DIR$/preps/prep5/prep5.py" />
       </list>
     </option>
   </component>
@@ -289,29 +252,13 @@
             <path>
               <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148" type="462c0819:PsiDirectoryNode" />
-              <item name="assignments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148" type="462c0819:PsiDirectoryNode" />
-              <item name="assignments" type="462c0819:PsiDirectoryNode" />
-              <item name="a1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148" type="462c0819:PsiDirectoryNode" />
-              <item name="lectures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148" type="462c0819:PsiDirectoryNode" />
               <item name="preps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148" type="462c0819:PsiDirectoryNode" />
               <item name="preps" type="462c0819:PsiDirectoryNode" />
-              <item name="prep4" type="462c0819:PsiDirectoryNode" />
+              <item name="prep5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -361,7 +308,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.algorithms">
+  <component name="RunManager" selected="Python.prep5">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -382,7 +329,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="MathEXParse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="prep5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -390,11 +337,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lectures/week4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lectures/week4/MathEXParse.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep5/prep5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -403,98 +350,89 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="algorithms" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Doctest LinkedList.__contains__" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a1/algorithms.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep5/prep5.py" />
+      <option name="CLASS_NAME" value="LinkedList" />
+      <option name="METHOD_NAME" value="__contains__" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="entities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Doctest LinkedList.__len__" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a1/entities.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep5/prep5.py" />
+      <option name="CLASS_NAME" value="LinkedList" />
+      <option name="METHOD_NAME" value="__len__" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="simulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Doctest LinkedList.append" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a1/simulation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep5/prep5.py" />
+      <option name="CLASS_NAME" value="LinkedList" />
+      <option name="METHOD_NAME" value="append" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for prep2_sample_test.test_new_spinner_position" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in prep5_sample_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;prep2_sample_test.test_new_spinner_position&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/preps/prep5/prep5_sample_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.pytest for prep2_sample_test.test_new_spinner_position" />
-      <item itemvalue="Python.MathEXParse" />
-      <item itemvalue="Python.simulation" />
-      <item itemvalue="Python.entities" />
-      <item itemvalue="Python.algorithms" />
+      <item itemvalue="Python tests.Doctest LinkedList.__len__" />
+      <item itemvalue="Python tests.Doctest LinkedList.__contains__" />
+      <item itemvalue="Python tests.Doctest LinkedList.append" />
+      <item itemvalue="Python.prep5" />
+      <item itemvalue="Python tests.pytest in prep5_sample_test.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.algorithms" />
-        <item itemvalue="Python.simulation" />
-        <item itemvalue="Python.entities" />
-        <item itemvalue="Python.MathEXParse" />
-        <item itemvalue="Python tests.pytest for prep2_sample_test.test_new_spinner_position" />
+        <item itemvalue="Python.prep5" />
+        <item itemvalue="Python tests.pytest in prep5_sample_test.py" />
+        <item itemvalue="Python tests.Doctest LinkedList.append" />
+        <item itemvalue="Python tests.Doctest LinkedList.__contains__" />
+        <item itemvalue="Python tests.Doctest LinkedList.__len__" />
       </list>
     </recent_temporary>
   </component>
@@ -544,31 +482,17 @@
       <option name="project" value="LOCAL" />
       <updated>1538667776048</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Pushing more a1 stuff">
+      <created>1538938483941</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1538938483941</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctest_peek - 2018.10.01 at 21h 39m 54s.xml">
-      <configuration name="Doctest peek" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_reverse_top_two - 2018.10.01 at 21h 39m 58s.xml">
-      <configuration name="Doctest reverse_top_two" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_remove_all - 2018.10.01 at 21h 40m 01s.xml">
-      <configuration name="Doctest remove_all" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_remove_all_but_one - 2018.10.01 at 21h 42m 34s.xml">
-      <configuration name="Doctest remove_all_but_one" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_remove_all_but_one - 2018.10.01 at 21h 43m 25s.xml">
-      <configuration name="Doctest remove_all_but_one" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_prep4_sample_test_test_reverse_top_two_doctest - 2018.10.01 at 21h 43m 37s.xml">
-      <configuration name="pytest for prep4_sample_test.test_reverse_top_two_doctest" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_prep4_sample_test_test_peek_doctest - 2018.10.01 at 21h 43m 55s.xml">
-      <configuration name="pytest for prep4_sample_test.test_peek_doctest" configurationId="tests" />
-    </history-entry>
     <history-entry file="Doctests_in_Spinner - 2018.10.01 at 21h 47m 24s.xml">
       <configuration name="Doctests in Spinner" configurationId="tests" />
     </history-entry>
@@ -577,6 +501,27 @@
     </history-entry>
     <history-entry file="pytest_for_prep2_sample_test_test_new_spinner_position - 2018.10.01 at 21h 48m 08s.xml">
       <configuration name="pytest for prep2_sample_test.test_new_spinner_position" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList___len__ - 2018.10.08 at 16h 37m 36s.xml">
+      <configuration name="Doctest LinkedList.__len__" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList___contains__ - 2018.10.08 at 16h 41m 02s.xml">
+      <configuration name="Doctest LinkedList.__contains__" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList_append - 2018.10.08 at 16h 43m 42s.xml">
+      <configuration name="Doctest LinkedList.append" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList_append - 2018.10.08 at 16h 44m 32s.xml">
+      <configuration name="Doctest LinkedList.append" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList_append - 2018.10.08 at 16h 46m 48s.xml">
+      <configuration name="Doctest LinkedList.append" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctest_LinkedList_append - 2018.10.08 at 16h 49m 42s.xml">
+      <configuration name="Doctest LinkedList.append" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_prep5_sample_test_py - 2018.10.08 at 16h 50m 09s.xml">
+      <configuration name="pytest in prep5_sample_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -590,6 +535,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.12747689" />
       <window_info id="Structure" order="1" weight="0.2494331" />
@@ -598,7 +544,7 @@
       <window_info id="TODO" order="4" weight="0.32826948" />
       <window_info anchor="bottom" id="Changes" order="0" />
       <window_info anchor="bottom" id="Application Servers" order="1" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="2" sideWeight="0.4993395" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4993395" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32977304" />
@@ -688,7 +634,8 @@
     <MESSAGE value="Added prep3 and lab2" />
     <MESSAGE value="fixed some unversioned files" />
     <MESSAGE value="Added some preps and part of a1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some preps and part of a1" />
+    <MESSAGE value="Pushing more a1 stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushing more a1 stuff" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Requirements.txt">
@@ -858,20 +805,20 @@
     <entry file="file://$PROJECT_DIR$/assignments/a1/sample_arrivals.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/sprites.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1862">
-          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+        <state relative-caret-position="361">
+          <caret line="110" column="48" lean-forward="true" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+          <folding>
+            <marker date="1539008944712" expanded="true" signature="3860:4018" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/visualizer.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/ideas.txt">
+    <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="209">
+          <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -885,17 +832,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a1/sprites.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+        <state relative-caret-position="76">
+          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a1/visualizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+        <state relative-caret-position="-1957" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a1/ideas.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preps/prep5/prep5_sample_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preps/prep5/prep5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3059">
+          <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
         </state>
       </provider>
     </entry>
