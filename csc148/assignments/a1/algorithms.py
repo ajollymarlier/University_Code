@@ -78,7 +78,6 @@ class RandomArrivals(ArrivalGenerator):
     Hint: look up the 'sample' function from random.
     """
 
-    # TODO CHECK IF THIS IS WORKING
     def generate(self, round_num: int) -> Dict[int, List[Person]]:
         """Return the new arrivals for the simulation at the given round.
 
@@ -87,35 +86,34 @@ class RandomArrivals(ArrivalGenerator):
 
         You can choose whether to include floors where no people arrived.
         """
-        # TODO Use random.sample later
-        # TODO have to create key of round_num
-        arriving_people = {}
-        for i in range(self.max_floor):
-            arriving_people[i] = []
+        arriving_people = dict()
+        arriving_people[round_num] = []
 
-        for i in range(self.num_people):
-            chosen_floor = random.randint(0, self.max_floor - 1)
-            arriving_people[chosen_floor].append(
-                Person(chosen_floor, self._get_target(chosen_floor)))
+        #TODO might have to fix this at one point because random.sample
+        # produces unique numbers, so its impossible to have more than one
+        # person spawn on each floor
+
+        # Creates a list 2 * the length of generations with each pair
+        # representing a person with start and end values
+        people_info = random.sample(range(1, self.max_floor),
+                                    self.num_people * 2)
+
+        i = 0
+        while i < len(people_info):
+            arriving_people[round_num].append(Person(people_info[i],
+                                                     people_info[i + 1]))
+            i += 2
 
         return arriving_people
 
-    def _get_target(self, start_floor: int) -> int:
-        """Helper Method for finding a target floor that is not the same
-        as the Person start floor
-
-        === Precondition ===
-        start_floor >= 0 and <= max_floor - 1"""
-
-        target = start_floor
-        while target == start_floor:
-            target = random.randint(0, self.max_floor - 1)
-
-        return target
-
 
 class FileArrivals(ArrivalGenerator):
-    """Generate arrivals from a CSV file."""
+    """Generate arrivals from a CSV file.
+    === Attributes ===
+        filename: the name of the file being read from
+    """
+
+    filename: str
 
     def __init__(self, max_floor: int, filename: str) -> None:
         """Initialize a new FileArrivals algorithm from the given file.
@@ -126,20 +124,21 @@ class FileArrivals(ArrivalGenerator):
         Precondition:
             <filename> refers to a valid CSV file, following the specified
             format and restrictions from the assignment handout.
-        """
-        ArrivalGenerator.__init__(self, max_floor, None)
 
-    # TODO Might need to use max_floor
-    # TODO need to check this
-    def generate(self, filename: int) -> Dict[int, List[Person]]:
+        """
+
+        ArrivalGenerator.__init__(self, max_floor, None)
+        self.filename = filename
+
+    def generate(self, round_num: int) -> Dict[int, List[Person]]:
         # Instantiates and populates dict with empty list for each round num
-        arriving_people = {}
-        for i in range(self.max_floor):
-            arriving_people[i] = []
+        # i + 1 b/c first floor is at 1
+        arriving_people = dict()
+        arriving_people[round_num] = []
 
         # We've provided some of the "reading from csv files" boilerplate code
         # for you to help you get started.
-        with open(filename) as csvfile:
+        with open(self.filename) as csvfile:
             reader = csv.reader(csvfile)
             for line in reader:
                 # <line> is a list of strings corresponding
@@ -147,12 +146,12 @@ class FileArrivals(ArrivalGenerator):
                 # You'll need to convert the strings to ints and then process
                 # and store them.
 
-                arrival_round = int(line[0])
-                i = 1
-                while i < len(line):
-                    arriving_people[arrival_round].append(
-                        Person(int(line[i]), int(line[i + 1])))
-                    i += 2
+                if int(line[0]) == round_num:
+                    i = 1
+                    while i < len(line):
+                        arriving_people[round_num].append(
+                            Person(int(line[i]), int(line[i + 1])))
+                        i += 2
 
         return arriving_people
 
@@ -196,7 +195,28 @@ class MovingAlgorithm:
 class RandomAlgorithm(MovingAlgorithm):
     """A moving algorithm that picks a random direction for each elevator.
     """
-    pass
+    def move_elevators(self,
+                       elevators: List[Elevator],
+                       waiting: Dict[int, List[Person]],
+                       max_floor: int) -> List[Direction]:
+        directions = list()
+        for i in range(len(elevators)):
+            chosen_dir = None
+
+            if elevators[i].floor == max_floor:
+                chosen_dir = random.choice([Direction.DOWN, Direction.STAY])
+
+            elif elevators[i].floor == 1:
+                chosen_dir = random.choice([Direction.STAY, Direction.UP])
+
+            else:
+                chosen_dir = random.choice([Direction.DOWN,
+                                            Direction.STAY, Direction.UP])
+
+            directions.append(chosen_dir)
+            elevators[i].floor += chosen_dir.value
+
+        return directions
 
 
 class PushyPassenger(MovingAlgorithm):

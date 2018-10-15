@@ -23,7 +23,8 @@ People Generation
     - Round 1: one person whose starting floor is 1 and target floor is 4, and
       another person whose starting floor is 5 and target floor is 3, in that order
 
-
+Floors
+    - Floors start at 1
 
 
 

@@ -35,29 +35,33 @@ class Elevator(ElevatorSprite):
     === Attributes ===
     passengers: A list of the people currently on this elevator
     capacity: the maximum number of people allowed in an elevator
+    floor: the current floor of the elevator
 
     === Representation invariants ===
     capacity >= 1
+    0 <= floor <= max_floor
     """
     passengers: List[Person]
-    capacity: int
+    max_capacity: int
+    floor: int
 
-    def __init__(self, capacity: int) -> None:
+    def __init__(self, max_capacity: int) -> None:
         """Creates Elevator object with empty list of passengers and
         attributes inherited from superclass"""
 
         ElevatorSprite.__init__(self)
         self.passengers = []
-        self.capacity = capacity
+        self.max_capacity = max_capacity
+        self.floor = 1
 
     # Inherited from superclass
     def fullness(self) -> float:
         """Return the fraction that this elevator is filled.
-            The value returned should be a float between 0.0 (completely empty) and
-            1.0 (completely full).
+            The value returned should be a float between 0.0 (completely empty)
+            and 1.0 (completely full).
             """
 
-        return self.capacity / len(self.passengers)
+        return len(self.passengers) / self.max_capacity
 
 
 class Person(PersonSprite):
@@ -81,10 +85,10 @@ class Person(PersonSprite):
         """Creates new instance of Person"""
 
         # TODO potentially should raise exception if RIs are violated
-        PersonSprite.__init__(self)
         self.start = start
         self.target = target
         self.wait_time = 0
+        PersonSprite.__init__(self)
 
     def get_anger_level(self) -> int:
         """Return this person's anger level.
