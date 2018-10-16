@@ -252,5 +252,6 @@ if __name__ == '__main__':
         'allowed-io': ['__init__'],
         'extra-imports': ['entities', 'random', 'csv', 'enum'],
         'max-nested-blocks': 4,
+        'max-attributes': 12,
         'disable': ['R0201']
     })

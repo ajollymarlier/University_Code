@@ -36,11 +36,24 @@ class Simulation:
     waiting: a dictionary of people waiting for an elevator
              (keys are floor numbers, values are the list of waiting people)
 
+    _num_iterations: number of rounds processed in simulation
+    _total_people: total amount of people arriving in simulation
+    _people_completed: total amount of people picked up and dropped
+                        off at target floor
+    _max_time: maximum time spent waiting
+    _min_time: minimum time spent waiting
+    _wait_times: list of all people's wait times.
+                    Will be used to calculate avg_time
+
     === Representation Invariants ===
     num_floors >= 2
     num_elevators >= 1
     elevator_capacity >= 1
+
+    _max_time >= 0 and <= 15
+    _min_time >= 0 and <= 15
     """
+    # Running Attributes
     arrival_generator: algorithms.ArrivalGenerator
     elevators: List[Elevator]
     moving_algorithm: algorithms.MovingAlgorithm
@@ -48,15 +61,32 @@ class Simulation:
     visualizer: Visualizer
     waiting: Dict[int, List[Person]]
 
+    # Stat Attributes
+    _num_iterations: int
+    _total_people: int
+    _people_completed: int
+    _max_time: int
+    _min_time: int
+    _wait_times: List[int]
+
     def __init__(self,
                  config: Dict[str, Any]) -> None:
         """Initialize a new simulation using the given configuration."""
 
+        # Running Attributes
         self.arrival_generator = config['arrival_generator']
         self.elevators = []
         self.moving_algorithm = config['moving_algorithm']
         self.num_floors = config['num_floors']
         self.waiting = {}
+
+        # Stat Attributes
+        self._num_iterations = 0  # updated in self.run
+        self._total_people = 0  # changed in self._generate_arrivals()
+        self._people_completed = 0  # changed in self._handle_leaving()
+        self._max_time = 0  # This and below update in self.handle_leaving()
+        self._min_time = 16  # 1 + num_rounds so first occurrence is always min
+        self._wait_times = list()  # updates in self._handle_leaving()
 
         # Populates waiting with empty lists for every floor_num
         # i + 1 b/c first floor is 1
@@ -105,10 +135,25 @@ class Simulation:
             # Stage 4: move the elevators using the moving algorithm
             self._move_elevators()
 
-            # Pause for 1 second
+            # Pause for 1 second and increment _num_iterations
             self.visualizer.wait(1)
+            self._num_iterations += 1
 
+        self._add_times_in_elevator()
         return self._calculate_stats()
+
+    def _add_times_in_elevator(self) -> None:
+        """Adds wait times for people in elevator at end of sim and
+        adjusts _max_time and _min_time accordingly"""
+        for elevator in self.elevators:
+            for person in elevator.passengers:
+                self._wait_times.append(person.wait_time)
+
+                if person.wait_time > self._max_time:
+                    self._max_time = person.wait_time
+
+                if person.wait_time < self._min_time:
+                    self._min_time = person.wait_time
 
     def _generate_arrivals(self, round_num: int) -> None:
         """Gets dictionary with {start_floor : Person(start, target) and
@@ -118,9 +163,9 @@ class Simulation:
         for i in range(len(arrivals)):
             self.waiting[arrivals[i].start].append(arrivals[i])
 
+        self._total_people += len(arrivals)  # adds to _total_people
         self.visualizer.show_arrivals(self.waiting)
 
-    # TODO are the sprites supposed to disappear after leaving?
     def _handle_leaving(self) -> None:
         """Handle people leaving elevators."""
         for elevator in self.elevators:
@@ -128,6 +173,18 @@ class Simulation:
 
                 if elevator.floor == person.target:
                     elevator.passengers.remove(person)
+                    self._people_completed += 1  # Increments _people_completed
+
+                    # Updates _min_time
+                    if person.wait_time < self._min_time:
+                        self._min_time = person.wait_time
+
+                    # Updates max_time
+                    if person.wait_time > self._max_time:
+                        self._max_time = person.wait_time
+
+                    # Updates wait_times and calls visualizer
+                    self._wait_times.append(person.wait_time)
                     self.visualizer.show_disembarking(person, elevator)
 
     def _handle_boarding(self) -> None:
@@ -136,6 +193,16 @@ class Simulation:
             arrivals_at_floor = self.waiting[floor]
             self._load_elevators(floor, arrivals_at_floor)
 
+            # Updates wait_time for all people waiting
+            for person in arrivals_at_floor:
+                person.wait_time += 1
+
+        # Updates wait_time for all people in elevators
+        for elevator in self.elevators:
+            for person in elevator.passengers:
+                person.wait_time += 1
+
+    # Self-created Helper Method
     def _load_elevators(self, curr_floor: int,
                         arrivals_at_floor: List[Person]) -> None:
         """Helper method to handle loading of elevators"""
@@ -171,13 +238,26 @@ class Simulation:
         """Report the statistics for the current run of this simulation.
         """
         return {
-            'num_iterations': 0,
-            'total_people': 0,
-            'people_completed': 0,
-            'max_time': 0,
-            'min_time': 0,
-            'avg_time': 0
+            'num_iterations': self._num_iterations,
+            'total_people': self._total_people,
+            'people_completed': self._people_completed,
+            'max_time': self._max_time,
+            'min_time': self._min_time,
+            'avg_time': self._get_avg_time()
         }
+
+    def _get_avg_time(self) -> int:
+        """Helper method to calculate the avg
+        wait time of all people in simulation"""
+        total_time = 0
+        for time in self._wait_times:
+            total_time += time
+
+        if len(self._wait_times) > 0:
+            return total_time // len(self._wait_times)
+
+        else:
+            return 0
 
 
 def sample_run() -> Dict[str, int]:
@@ -206,5 +286,7 @@ if __name__ == '__main__':
     """import python_ta
     python_ta.check_all(config={
         'extra-imports': ['entities', 'visualizer', 'algorithms', 'time'],
-        'max-nested-blocks': 4
+        'max-nested-blocks': 4,
+        'max-attributes': 12,
+        'disable': ['R0201']
     })"""

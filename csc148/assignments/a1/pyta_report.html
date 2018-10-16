@@ -533,13 +533,13 @@ footer {
     <body>
         <header>
             <h1 class="title">PyTA Error Report</h1>
-            <time>Tue. Oct. 09 2018, 12:33:09 PM</time>
+            <time>Tue. Oct. 16 2018, 11:55:12 AM</time>
         </header>
         <main>
             
             <section>
                 <article class="file-name">
-                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/entities.py </h2>
+                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/simulation.py </h2>
                 </article>
                 <article class="error-output code-errors">
                     <h3 class="category-heading">
@@ -569,7 +569,7 @@ footer {
 
                             <div class="info">
                                 <span class="error-link style-error-id">
-                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;C0301" target="_blank">&#10064; C0301 (line-too-long)</a>
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;E9994" target="_blank">&#10064; E9994 (unnecessary-indexing)</a>
                                 </span>
                                 <span class="occurrences">
                                 1
@@ -589,14 +589,54 @@ footer {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 56] Line too long (83/80)
+                                        [Line 149] For loop variable "i" can be simplified
                                     </h4>
                                     
-                                    <code>   <span class="grey line-num">54</span>      <span class="grey"><span class="pygments-k">def</span> <span class="pygments-nf">fullness</span><span class="pygments-p">(</span><span class="pygments-bp">self</span><span class="pygments-p">)</span> <span class="pygments-o">-&gt;</span> <span class="pygments-nb">float</span><span class="pygments-p">:</span></span>
-   <span class="grey line-num">55</span>          <span class="grey"><span class="pygments-s2">&quot;&quot;&quot;Return the fraction that this elevator is filled.</span></span>
-   <span class="gbold line-num">56</span>              <span class="highlight-pyta"><span class="pygments-n">The</span> <span class="pygments-n">value</span> <span class="pygments-n">returned</span> <span class="pygments-n">should</span> <span class="pygments-n">be</span> <span class="pygments-n">a</span> <span class="pygments-nb">float</span> <span class="pygments-n">between</span> <span class="pygments-mf">0.0</span> <span class="pygments-p">(</span><span class="pygments-n">completely</span> <span class="pygments-n">empty</span><span class="pygments-p">)</span> <span class="pygments-ow">and</span></span>
-   <span class="grey line-num">57</span>              <span class="grey"><span class="pygments-mf">1.0</span> <span class="pygments-p">(</span><span class="pygments-n">completely</span> <span class="pygments-n">full</span><span class="pygments-p">)</span><span class="pygments-o">.</span></span>
-   <span class="grey line-num">58</span>              <span class="grey"><span class="pygments-s2">&quot;&quot;&quot;</span></span>
+                                    <code>  <span class="grey line-num">147</span>  <span class="grey"></span>
+  <span class="grey line-num">148</span>          <span class="grey"><span class="pygments-n">arrivals</span> <span class="pygments-o">=</span> <span class="pygments-bp">self</span><span class="pygments-o">.</span><span class="pygments-n">arrival_generator</span><span class="pygments-o">.</span><span class="pygments-n">generate</span><span class="pygments-p">(</span><span class="pygments-n">round_num</span><span class="pygments-p">)[</span><span class="pygments-n">round_num</span><span class="pygments-p">]</span></span>
+  <span class="gbold line-num">149</span>          <span class="black"><span class="pygments-k">for</span> </span><span class="highlight-pyta"><span class="pygments-n">i</span></span> <span class="black"><span class="pygments-ow">in</span> <span class="pygments-nb">range</span><span class="pygments-p">(</span><span class="pygments-nb">len</span><span class="pygments-p">(</span><span class="pygments-n">arrivals</span><span class="pygments-p">)):</span></span>
+  <span class="grey line-num">150</span>              <span class="grey"><span class="pygments-bp">self</span><span class="pygments-o">.</span><span class="pygments-n">waiting</span><span class="pygments-p">[</span><span class="pygments-n">arrivals</span><span class="pygments-p">[</span><span class="pygments-n">i</span><span class="pygments-p">]</span><span class="pygments-o">.</span><span class="pygments-n">start</span><span class="pygments-p">]</span><span class="pygments-o">.</span><span class="pygments-n">append</span><span class="pygments-p">(</span><span class="pygments-n">arrivals</span><span class="pygments-p">[</span><span class="pygments-n">i</span><span class="pygments-p">])</span></span>
+  <span class="grey line-num">151</span>  <span class="grey"></span>
+</code>
+                                    
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        
+                        <div class="error-instance">
+
+                            <div class="info">
+                                <span class="error-link style-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;W0611" target="_blank">&#10064; W0611 (unused-import)</a>
+                                </span>
+                                <span class="occurrences">
+                                1
+                                
+                                 occurrence.
+                                
+                                </span>
+                                <span class="shown">
+                                
+                                </span>
+                                <span class="slider">
+                                   <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 22] Unused Direction imported from algorithms
+                                    </h4>
+                                    
+                                    <code>   <span class="grey line-num">20</span>  <span class="grey"></span>
+   <span class="grey line-num">21</span>  <span class="grey"><span class="pygments-kn">import</span> <span class="pygments-nn">algorithms</span></span>
+   <span class="gbold line-num">22</span>  <span class="highlight-pyta"><span class="pygments-kn">from</span> <span class="pygments-nn">algorithms</span> <span class="pygments-kn">import</span> <span class="pygments-n">Direction</span></span>
+   <span class="grey line-num">23</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">entities</span> <span class="pygments-kn">import</span> <span class="pygments-n">Person</span><span class="pygments-p">,</span> <span class="pygments-n">Elevator</span></span>
+   <span class="grey line-num">24</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">visualizer</span> <span class="pygments-kn">import</span> <span class="pygments-n">Visualizer</span></span>
 </code>
                                     
                                 </div>

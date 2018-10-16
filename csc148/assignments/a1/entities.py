@@ -90,6 +90,7 @@ class Person(PersonSprite):
         self.wait_time = 0
         PersonSprite.__init__(self)
 
+    #TODO not working right now
     def get_anger_level(self) -> int:
         """Return this person's anger level.
 
@@ -118,5 +119,7 @@ if __name__ == '__main__':
     import python_ta
     python_ta.check_all(config={
         'extra-imports': ['sprites'],
-        'max-nested-blocks': 4
+        'max-nested-blocks': 4,
+        'max-attributes': 12,
+        'disable': ['R0201']
     })
