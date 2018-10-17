@@ -533,13 +533,13 @@ footer {
     <body>
         <header>
             <h1 class="title">PyTA Error Report</h1>
-            <time>Tue. Oct. 16 2018, 11:55:12 AM</time>
+            <time>Wed. Oct. 17 2018, 12:19:45 PM</time>
         </header>
         <main>
             
             <section>
                 <article class="file-name">
-                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/simulation.py </h2>
+                    <h2> C:/Users/arunj/PycharmProjects/University_of_Toronto/csc148/assignments/a1/algorithms.py </h2>
                 </article>
                 <article class="error-output code-errors">
                     <h3 class="category-heading">
@@ -550,9 +550,90 @@ footer {
                     </h3>
                     <div class="content collapsible">
                         
-                        <span class="empty-placeholder">None!
-
-</span>
+                        <div class="error-instance">
+                            <div class="info">
+                                <span class="error-link code-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;W0104" target="_blank">&#10064; W0104 (pointless-statement)</a>
+                                </span>
+                                <span class="occurrences">
+                                1
+                                
+                                 occurrence.
+                                
+                                </span>
+                                <span class="shown">
+                                
+                                </span>
+                                <span class="slider">
+                                    <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 244] Statement seems to have no effect
+                                    </h4>
+                                    
+                                    <code>  <span class="grey line-num">242</span>                      <span class="grey"><span class="pygments-k">try</span><span class="pygments-p">:</span></span>
+  <span class="grey line-num">243</span>                          <span class="grey"><span class="pygments-c1"># To check and see if key exists</span></span>
+  <span class="gbold line-num">244</span>                          <span class="black"></span><span class="highlight-pyta"><span class="pygments-n">waiting</span><span class="pygments-p">[</span><span class="pygments-n">i</span><span class="pygments-p">]</span></span>
+  <span class="grey line-num">245</span>                          <span class="grey"><span class="pygments-n">elevator_target_floor</span> <span class="pygments-o">=</span> <span class="pygments-n">i</span></span>
+  <span class="grey line-num">246</span>                          <span class="grey"><span class="pygments-k">break</span></span>
+</code>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="error-instance">
+                            <div class="info">
+                                <span class="error-link code-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;W0223" target="_blank">&#10064; W0223 (abstract-method)</a>
+                                </span>
+                                <span class="occurrences">
+                                1
+                                
+                                 occurrence.
+                                
+                                </span>
+                                <span class="shown">
+                                
+                                </span>
+                                <span class="slider">
+                                    <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 271] Method 'move_elevators' is abstract in class 'MovingAlgorithm' but is not overridden
+                                    </h4>
+                                    
+                                    <code>  <span class="grey line-num">269</span>  <span class="grey"></span>
+  <span class="grey line-num">270</span>  <span class="grey"></span>
+  <span class="gbold line-num">271</span>  <span class="highlight-pyta"><span class="pygments-k">class</span> <span class="pygments-nc">ShortSighted</span><span class="pygments-p">(</span><span class="pygments-n">MovingAlgorithm</span><span class="pygments-p">):</span></span>
+  <span class="gbold line-num">272</span>      <span class="highlight-pyta"><span class="pygments-s2">&quot;&quot;&quot;A moving algorithm that preferences the closest possible choice.</span></span>
+  <span class="gbold line-num">273</span>  <span class="highlight-pyta"></span>
+  <span class="gbold line-num">274</span>      <span class="highlight-pyta"><span class="pygments-n">If</span> <span class="pygments-n">the</span> <span class="pygments-n">elevator</span> <span class="pygments-ow">is</span> <span class="pygments-n">empty</span><span class="pygments-p">,</span> <span class="pygments-n">it</span> <span class="pygments-n">moves</span> <span class="pygments-n">towards</span> <span class="pygments-n">the</span> <span class="pygments-o">*</span><span class="pygments-n">closest</span><span class="pygments-o">*</span> <span class="pygments-n">floor</span> <span class="pygments-n">that</span> <span class="pygments-n">has</span> <span class="pygments-n">at</span></span>
+  <span class="gbold line-num">275</span>      <span class="highlight-pyta"><span class="pygments-n">least</span> <span class="pygments-n">one</span> <span class="pygments-n">person</span> <span class="pygments-n">waiting</span><span class="pygments-p">,</span> <span class="pygments-ow">or</span> <span class="pygments-n">stays</span> <span class="pygments-n">still</span> <span class="pygments-k">if</span> <span class="pygments-n">there</span> <span class="pygments-n">are</span> <span class="pygments-n">no</span> <span class="pygments-n">people</span> <span class="pygments-n">waiting</span><span class="pygments-o">.</span></span>
+  <span class="gbold line-num">276</span>  <span class="highlight-pyta"></span>
+  <span class="gbold line-num">277</span>      <span class="highlight-pyta"><span class="pygments-n">If</span> <span class="pygments-n">the</span> <span class="pygments-n">elevator</span> <span class="pygments-n">isn</span><span class="pygments-s1">&#39;t empty, it moves towards the closest target floor of</span></span>
+  <span class="gbold line-num">278</span>      <span class="highlight-pyta"><span class="pygments-nb">all</span> <span class="pygments-n">passengers</span> <span class="pygments-n">who</span> <span class="pygments-n">are</span> <span class="pygments-n">on</span> <span class="pygments-n">the</span> <span class="pygments-n">elevator</span><span class="pygments-o">.</span></span>
+  <span class="gbold line-num">279</span>  <span class="highlight-pyta"></span>
+  <span class="gbold line-num">280</span>      <span class="highlight-pyta"><span class="pygments-n">In</span> <span class="pygments-n">this</span> <span class="pygments-n">case</span><span class="pygments-p">,</span> <span class="pygments-n">the</span> <span class="pygments-n">order</span> <span class="pygments-ow">in</span> <span class="pygments-n">which</span> <span class="pygments-n">people</span> <span class="pygments-n">boarded</span> <span class="pygments-n">does</span> <span class="pygments-o">*</span><span class="pygments-ow">not</span><span class="pygments-o">*</span> <span class="pygments-n">matter</span><span class="pygments-o">.</span></span>
+  <span class="gbold line-num">281</span>      <span class="highlight-pyta"><span class="pygments-s2">&quot;&quot;&quot;</span></span>
+  <span class="gbold line-num">282</span>      <span class="highlight-pyta"><span class="pygments-k">pass</span></span>
+  <span class="grey line-num">283</span>  <span class="grey"></span>
+  <span class="grey line-num">284</span>  <span class="grey"></span>
+</code>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
                         
                     </div>
                 </article>
@@ -569,7 +650,7 @@ footer {
 
                             <div class="info">
                                 <span class="error-link style-error-id">
-                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;E9994" target="_blank">&#10064; E9994 (unnecessary-indexing)</a>
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;E9998" target="_blank">&#10064; E9998 (IO-function-not-allowed)</a>
                                 </span>
                                 <span class="occurrences">
                                 1
@@ -589,54 +670,14 @@ footer {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 149] For loop variable "i" can be simplified
+                                        [Line 142] Used IO function open
                                     </h4>
                                     
-                                    <code>  <span class="grey line-num">147</span>  <span class="grey"></span>
-  <span class="grey line-num">148</span>          <span class="grey"><span class="pygments-n">arrivals</span> <span class="pygments-o">=</span> <span class="pygments-bp">self</span><span class="pygments-o">.</span><span class="pygments-n">arrival_generator</span><span class="pygments-o">.</span><span class="pygments-n">generate</span><span class="pygments-p">(</span><span class="pygments-n">round_num</span><span class="pygments-p">)[</span><span class="pygments-n">round_num</span><span class="pygments-p">]</span></span>
-  <span class="gbold line-num">149</span>          <span class="black"><span class="pygments-k">for</span> </span><span class="highlight-pyta"><span class="pygments-n">i</span></span> <span class="black"><span class="pygments-ow">in</span> <span class="pygments-nb">range</span><span class="pygments-p">(</span><span class="pygments-nb">len</span><span class="pygments-p">(</span><span class="pygments-n">arrivals</span><span class="pygments-p">)):</span></span>
-  <span class="grey line-num">150</span>              <span class="grey"><span class="pygments-bp">self</span><span class="pygments-o">.</span><span class="pygments-n">waiting</span><span class="pygments-p">[</span><span class="pygments-n">arrivals</span><span class="pygments-p">[</span><span class="pygments-n">i</span><span class="pygments-p">]</span><span class="pygments-o">.</span><span class="pygments-n">start</span><span class="pygments-p">]</span><span class="pygments-o">.</span><span class="pygments-n">append</span><span class="pygments-p">(</span><span class="pygments-n">arrivals</span><span class="pygments-p">[</span><span class="pygments-n">i</span><span class="pygments-p">])</span></span>
-  <span class="grey line-num">151</span>  <span class="grey"></span>
-</code>
-                                    
-                                </div>
-                                
-                            </div>
-
-                        </div>
-                        
-                        <div class="error-instance">
-
-                            <div class="info">
-                                <span class="error-link style-error-id">
-                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;W0611" target="_blank">&#10064; W0611 (unused-import)</a>
-                                </span>
-                                <span class="occurrences">
-                                1
-                                
-                                 occurrence.
-                                
-                                </span>
-                                <span class="shown">
-                                
-                                </span>
-                                <span class="slider">
-                                   <button> Expand/Collapse </button>
-                                </span>
-                            </div>
-
-                            <div class="message-container collapsible">
-                                
-                                <div class="message">
-                                    <h4 class="message-name">
-                                        [Line 22] Unused Direction imported from algorithms
-                                    </h4>
-                                    
-                                    <code>   <span class="grey line-num">20</span>  <span class="grey"></span>
-   <span class="grey line-num">21</span>  <span class="grey"><span class="pygments-kn">import</span> <span class="pygments-nn">algorithms</span></span>
-   <span class="gbold line-num">22</span>  <span class="highlight-pyta"><span class="pygments-kn">from</span> <span class="pygments-nn">algorithms</span> <span class="pygments-kn">import</span> <span class="pygments-n">Direction</span></span>
-   <span class="grey line-num">23</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">entities</span> <span class="pygments-kn">import</span> <span class="pygments-n">Person</span><span class="pygments-p">,</span> <span class="pygments-n">Elevator</span></span>
-   <span class="grey line-num">24</span>  <span class="grey"><span class="pygments-kn">from</span> <span class="pygments-nn">visualizer</span> <span class="pygments-kn">import</span> <span class="pygments-n">Visualizer</span></span>
+                                    <code>  <span class="grey line-num">140</span>          <span class="grey"><span class="pygments-c1"># We&#39;ve provided some of the &quot;reading from csv files&quot; boilerplate code</span></span>
+  <span class="grey line-num">141</span>          <span class="grey"><span class="pygments-c1"># for you to help you get started.</span></span>
+  <span class="gbold line-num">142</span>          <span class="black"><span class="pygments-k">with</span> </span><span class="highlight-pyta"><span class="pygments-nb">open</span><span class="pygments-p">(</span><span class="pygments-bp">self</span><span class="pygments-o">.</span><span class="pygments-n">filename</span><span class="pygments-p">)</span></span> <span class="black"><span class="pygments-k">as</span> <span class="pygments-n">csvfile</span><span class="pygments-p">:</span></span>
+  <span class="grey line-num">143</span>              <span class="grey"><span class="pygments-n">reader</span> <span class="pygments-o">=</span> <span class="pygments-n">csv</span><span class="pygments-o">.</span><span class="pygments-n">reader</span><span class="pygments-p">(</span><span class="pygments-n">csvfile</span><span class="pygments-p">)</span></span>
+  <span class="grey line-num">144</span>              <span class="grey"><span class="pygments-k">for</span> <span class="pygments-n">line</span> <span class="pygments-ow">in</span> <span class="pygments-n">reader</span><span class="pygments-p">:</span></span>
 </code>
                                     
                                 </div>

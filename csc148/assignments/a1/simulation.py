@@ -139,21 +139,7 @@ class Simulation:
             self.visualizer.wait(1)
             self._num_iterations += 1
 
-        self._add_times_in_elevator()
         return self._calculate_stats()
-
-    def _add_times_in_elevator(self) -> None:
-        """Adds wait times for people in elevator at end of sim and
-        adjusts _max_time and _min_time accordingly"""
-        for elevator in self.elevators:
-            for person in elevator.passengers:
-                self._wait_times.append(person.wait_time)
-
-                if person.wait_time > self._max_time:
-                    self._max_time = person.wait_time
-
-                if person.wait_time < self._min_time:
-                    self._min_time = person.wait_time
 
     def _generate_arrivals(self, round_num: int) -> None:
         """Gets dictionary with {start_floor : Person(start, target) and
@@ -172,7 +158,10 @@ class Simulation:
             for person in elevator.passengers:
 
                 if elevator.floor == person.target:
-                    elevator.passengers.remove(person)
+                    new_passengers = elevator.passengers.copy()
+                    new_passengers.remove(person)
+                    elevator.passengers = new_passengers
+
                     self._people_completed += 1  # Increments _people_completed
 
                     # Updates _min_time
@@ -202,22 +191,23 @@ class Simulation:
             for person in elevator.passengers:
                 person.wait_time += 1
 
+    # TODO check to see that pop doesnt skip over elements in arrivals_at_floor
     # Self-created Helper Method
     def _load_elevators(self, curr_floor: int,
                         arrivals_at_floor: List[Person]) -> None:
         """Helper method to handle loading of elevators"""
         for i in range(len(arrivals_at_floor)):
 
-            for j in range(len(self.elevators)):
+            for elevator in self.elevators:
                 try:
-                    while self.elevators[j].fullness() < 1.0 \
-                            and self.elevators[j].floor == curr_floor:
+                    while elevator.fullness() < 1.0 \
+                            and elevator.floor == curr_floor:
 
                         person_boarding = arrivals_at_floor.pop(i)
-                        self.elevators[j].passengers.append(person_boarding)
+                        elevator.passengers.append(person_boarding)
 
                         self.visualizer.show_boarding(person_boarding,
-                                                      self.elevators[j])
+                                                      elevator)
                 except IndexError:
                     pass
 
@@ -241,11 +231,28 @@ class Simulation:
             'num_iterations': self._num_iterations,
             'total_people': self._total_people,
             'people_completed': self._people_completed,
-            'max_time': self._max_time,
-            'min_time': self._min_time,
+            'max_time': self._get_max_time(),
+            'min_time': self._get_min_time(),
             'avg_time': self._get_avg_time()
         }
 
+    # Self-created helper method
+    def _get_max_time(self) -> int:
+        """Helper method to find max_time"""
+        if len(self._wait_times) > 0:
+            return self._max_time
+        else:
+            return -1
+
+    # Self-created helper method
+    def _get_min_time(self) -> int:
+        """Helper method to find min time"""
+        if len(self._wait_times) > 0:
+            return self._min_time
+        else:
+            return -1
+
+    # Self-created helper method
     def _get_avg_time(self) -> int:
         """Helper method to calculate the avg
         wait time of all people in simulation"""
@@ -257,7 +264,7 @@ class Simulation:
             return total_time // len(self._wait_times)
 
         else:
-            return 0
+            return -1
 
 
 def sample_run() -> Dict[str, int]:
@@ -267,9 +274,13 @@ def sample_run() -> Dict[str, int]:
         'num_elevators': 6,
         'elevator_capacity': 3,
         'num_people_per_round': 2,
-        # File arrival from "sample_arrivals.csv"
+        # File arrival from "sample_arrivals.csv
+        # and Random Arrival with 2 people every round"
         'arrival_generator': algorithms.FileArrivals(6, "sample_arrivals.csv"),
-        'moving_algorithm': algorithms.RandomAlgorithm(),
+        #'arrival_generator': algorithms.RandomArrivals(6, 2),
+        #'moving_algorithm': algorithms.RandomAlgorithm(),
+        #'moving_algorithm': algorithms.PushyPassenger(),
+        'moving_algorithm': algorithms.ShortSighted(),
         'visualize': True
     }
 

@@ -130,6 +130,7 @@ class FileArrivals(ArrivalGenerator):
         ArrivalGenerator.__init__(self, max_floor, None)
         self.filename = filename
 
+    # TODO doesnt work for blank file
     def generate(self, round_num: int) -> Dict[int, List[Person]]:
         # Instantiates and populates dict with empty list for each round num
         # i + 1 b/c first floor is at 1
@@ -200,13 +201,13 @@ class RandomAlgorithm(MovingAlgorithm):
                        waiting: Dict[int, List[Person]],
                        max_floor: int) -> List[Direction]:
         directions = list()
-        for i in range(len(elevators)):
+        for elevator in elevators:
             chosen_dir = None
 
-            if elevators[i].floor == max_floor:
+            if elevator.floor == max_floor:
                 chosen_dir = random.choice([Direction.DOWN, Direction.STAY])
 
-            elif elevators[i].floor == 1:
+            elif elevator.floor == 1:
                 chosen_dir = random.choice([Direction.STAY, Direction.UP])
 
             else:
@@ -214,11 +215,12 @@ class RandomAlgorithm(MovingAlgorithm):
                                             Direction.STAY, Direction.UP])
 
             directions.append(chosen_dir)
-            elevators[i].floor += chosen_dir.value
+            elevators.floor += chosen_dir.value
 
         return directions
 
 
+# TODO Needs Diverse Testing but Done
 class PushyPassenger(MovingAlgorithm):
     """A moving algorithm that preferences the first passenger on each elevator.
 
@@ -228,9 +230,54 @@ class PushyPassenger(MovingAlgorithm):
     If the elevator isn't empty, it moves towards the target floor of the
     *first* passenger who boarded the elevator.
     """
-    pass
+    def move_elevators(self,
+                       elevators: List[Elevator],
+                       waiting: Dict[int, List[Person]],
+                       max_floor: int) -> List[Direction]:
+        directions = list()
+        for elevator in elevators:
+
+            if len(elevator.passengers) == 0:
+                elevator_target_floor = None
+
+                for i in range(1, max_floor + 1):
+
+                    if len(waiting[i]) != 0:
+                        elevator_target_floor = i
+                        break
+
+                # Don't have to worry about same
+                # floor case because everyone would leave
+                # Also don't have to worry about out of bounds case
+                # because floors are limited by person target RI
+                if elevator_target_floor is None:
+                    directions.append(Direction.STAY)
+
+                elif elevator.floor < elevator_target_floor:
+                    directions.append(Direction.UP)
+                    elevator.floor += 1
+
+                elif elevator.floor > elevator_target_floor:
+                    directions.append(Direction.DOWN)
+                    elevator.floor -= 1
+
+            else:
+                # Same as above comment in if/elif/else block
+                if elevator.floor < elevator.passengers[0].target:
+                    directions.append(Direction.UP)
+                    elevator.floor += 1
+
+                elif elevator.floor > elevator.passengers[0].target:
+                    directions.append(Direction.DOWN)
+                    elevator.floor -= 1
+
+                else:
+                    directions.append(Direction.STAY)
+
+        return directions
 
 
+# TODO Look at first elevator with current file. Stays still at one point
 class ShortSighted(MovingAlgorithm):
     """A moving algorithm that preferences the closest possible choice.
 
@@ -242,7 +289,71 @@ class ShortSighted(MovingAlgorithm):
 
     In this case, the order in which people boarded does *not* matter.
     """
-    pass
+    def move_elevators(self,
+                       elevators: List[Elevator],
+                       waiting: Dict[int, List[Person]],
+                       max_floor: int) -> List[Direction]:
+        directions = list()
+        for elevator in elevators:
+
+            if len(elevator.passengers) == 0:
+                closest_floor = max_floor * elevator.floor
+
+                # Checks floors below elevator floor
+                i = elevator.floor - 1
+                while i >= 1:
+                    if len(waiting[i]) != 0:
+                        closest_floor = i
+                        break
+
+                    i -= 1
+
+                # Checks floors above elevator floor
+                i = elevator.floor + 1
+                while i <= max_floor:
+                    if len(waiting[i]) != 0:
+
+                        if abs(elevator.floor - i) <\
+                                abs(elevator.floor - closest_floor):
+                            closest_floor = i
+                            break
+
+                    i += 1
+
+                # Adds directions to list
+                if closest_floor == max_floor:
+                    directions.append(Direction.STAY)
+
+                elif elevator.floor < closest_floor:
+                    directions.append(Direction.UP)
+                    elevator.floor += 1
+
+                elif elevator.floor > closest_floor:
+                    directions.append(Direction.DOWN)
+                    elevator.floor -= 1
+
+            else:
+                closest_floor = elevator.floor * max_floor
+                for person in elevator.passengers:
+
+                    if abs(person.target - elevator.floor) < \
+                            abs(closest_floor - elevator.floor):
+                        closest_floor = person.target
+                        break
+
+                # Adds directions to list
+                if closest_floor == max_floor:
+                    directions.append(Direction.STAY)
+
+                elif elevator.floor < closest_floor:
+                    directions.append(Direction.UP)
+                    elevator.floor += 1
+
+                elif elevator.floor > closest_floor:
+                    directions.append(Direction.DOWN)
+                    elevator.floor -= 1
+
+        return directions
 
 
 if __name__ == '__main__':
