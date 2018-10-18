@@ -220,7 +220,6 @@ class RandomAlgorithm(MovingAlgorithm):
         return directions
 
 
-# TODO Needs Diverse Testing but Done
 class PushyPassenger(MovingAlgorithm):
     """A moving algorithm that preferences the first passenger on each elevator.
 
@@ -276,8 +275,7 @@ class PushyPassenger(MovingAlgorithm):
 
         return directions
 
-
-# TODO Look at first elevator with current file. Stays still at one point
+#TODO if distance of closest is tied, go to lower floor
 class ShortSighted(MovingAlgorithm):
     """A moving algorithm that preferences the closest possible choice.
 
@@ -297,7 +295,7 @@ class ShortSighted(MovingAlgorithm):
         for elevator in elevators:
 
             if len(elevator.passengers) == 0:
-                closest_floor = max_floor * elevator.floor
+                closest_floor = max_floor * elevator.floor + 1
 
                 # Checks floors below elevator floor
                 i = elevator.floor - 1
@@ -321,7 +319,8 @@ class ShortSighted(MovingAlgorithm):
                     i += 1
 
                 # Adds directions to list
-                if closest_floor == max_floor:
+                if closest_floor == max_floor or \
+                        closest_floor == max_floor * elevator.floor + 1:
                     directions.append(Direction.STAY)
 
                 elif elevator.floor < closest_floor:
@@ -339,10 +338,14 @@ class ShortSighted(MovingAlgorithm):
                     if abs(person.target - elevator.floor) < \
                             abs(closest_floor - elevator.floor):
                         closest_floor = person.target
-                        break
+
+                    elif abs(person.target - elevator.floor) == \
+                            abs(closest_floor - elevator.floor):
+                        closest_floor = min(closest_floor, person.target)
+
 
                 # Adds directions to list
-                if closest_floor == max_floor:
+                if closest_floor > max_floor:
                     directions.append(Direction.STAY)
 
                 elif elevator.floor < closest_floor:

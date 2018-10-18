@@ -19,7 +19,7 @@ remove any of the existing attributes.
 from typing import Dict, List, Any
 
 import algorithms
-from algorithms import Direction
+#from algorithms import Direction
 from entities import Person, Elevator
 from visualizer import Visualizer
 
@@ -136,7 +136,7 @@ class Simulation:
             self._move_elevators()
 
             # Pause for 1 second and increment _num_iterations
-            self.visualizer.wait(1)
+            self.visualizer.wait(3)
             self._num_iterations += 1
 
         return self._calculate_stats()
@@ -146,8 +146,8 @@ class Simulation:
         adds each element to waiting dict at start"""
 
         arrivals = self.arrival_generator.generate(round_num)[round_num]
-        for i in range(len(arrivals)):
-            self.waiting[arrivals[i].start].append(arrivals[i])
+        for person in arrivals:
+            self.waiting[person.start].append(person)
 
         self._total_people += len(arrivals)  # adds to _total_people
         self.visualizer.show_arrivals(self.waiting)
@@ -273,7 +273,7 @@ def sample_run() -> Dict[str, int]:
         'num_floors': 6,
         'num_elevators': 6,
         'elevator_capacity': 3,
-        'num_people_per_round': 2,
+        'num_people_per_round': 7,
         # File arrival from "sample_arrivals.csv
         # and Random Arrival with 2 people every round"
         'arrival_generator': algorithms.FileArrivals(6, "sample_arrivals.csv"),
@@ -281,6 +281,7 @@ def sample_run() -> Dict[str, int]:
         #'moving_algorithm': algorithms.RandomAlgorithm(),
         #'moving_algorithm': algorithms.PushyPassenger(),
         'moving_algorithm': algorithms.ShortSighted(),
+        # TODO change Back to true
         'visualize': True
     }
 
