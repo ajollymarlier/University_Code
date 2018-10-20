@@ -110,10 +110,10 @@ class RandomArrivals(ArrivalGenerator):
 class FileArrivals(ArrivalGenerator):
     """Generate arrivals from a CSV file.
     === Attributes ===
-        filename: the name of the file being read from
+        file_lines: List of lines from file
     """
 
-    filename: str
+    file_lines: List[List[str]]
 
     def __init__(self, max_floor: int, filename: str) -> None:
         """Initialize a new FileArrivals algorithm from the given file.
@@ -128,31 +128,30 @@ class FileArrivals(ArrivalGenerator):
         """
 
         ArrivalGenerator.__init__(self, max_floor, None)
-        self.filename = filename
+        self.file_lines = list()
 
-    # TODO doesnt work for blank file
-    def generate(self, round_num: int) -> Dict[int, List[Person]]:
-        # Instantiates and populates dict with empty list for each round num
-        # i + 1 b/c first floor is at 1
-        arriving_people = dict()
-        arriving_people[round_num] = []
-
-        # We've provided some of the "reading from csv files" boilerplate code
-        # for you to help you get started.
-        with open(self.filename) as csvfile:
+        with open(filename) as csvfile:
             reader = csv.reader(csvfile)
             for line in reader:
                 # <line> is a list of strings corresponding
                 # to one line of the original file.
                 # You'll need to convert the strings to ints and then process
                 # and store them.
+                self.file_lines.append(line)
 
-                if int(line[0]) == round_num:
-                    i = 1
-                    while i < len(line):
-                        arriving_people[round_num].append(
-                            Person(int(line[i]), int(line[i + 1])))
-                        i += 2
+    def generate(self, round_num: int) -> Dict[int, List[Person]]:
+        # Instantiates and populates dict with empty list for each round num
+        # i + 1 b/c first floor is at 1
+        arriving_people = dict()
+        arriving_people[round_num] = []
+
+        for line in self.file_lines:
+            if len(line) > 0 and int(line[0]) == round_num:
+                i = 1
+                while i < len(line):
+                    arriving_people[round_num].append(
+                        Person(int(line[i]), int(line[i + 1])))
+                    i += 2
 
         return arriving_people
 
@@ -275,7 +274,7 @@ class PushyPassenger(MovingAlgorithm):
 
         return directions
 
-#TODO if distance of closest is tied, go to lower floor
+
 class ShortSighted(MovingAlgorithm):
     """A moving algorithm that preferences the closest possible choice.
 
@@ -309,18 +308,16 @@ class ShortSighted(MovingAlgorithm):
                 # Checks floors above elevator floor
                 i = elevator.floor + 1
                 while i <= max_floor:
-                    if len(waiting[i]) != 0:
-
-                        if abs(elevator.floor - i) <\
+                    if len(waiting[i]) != 0 and abs(elevator.floor - i) <\
                                 abs(elevator.floor - closest_floor):
-                            closest_floor = i
-                            break
+                        closest_floor = i
+                        break
 
                     i += 1
 
                 # Adds directions to list
-                if closest_floor == max_floor or \
-                        closest_floor == max_floor * elevator.floor + 1:
+                if closest_floor == max_floor * elevator.floor + 1 \
+                        or elevator.floor == max_floor:
                     directions.append(Direction.STAY)
 
                 elif elevator.floor < closest_floor:

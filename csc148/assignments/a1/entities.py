@@ -84,7 +84,6 @@ class Person(PersonSprite):
     def __init__(self, start: int, target: int) -> None:
         """Creates new instance of Person"""
 
-        # TODO potentially should raise exception if RIs are violated
         self.start = start
         self.target = target
         self.wait_time = 0
