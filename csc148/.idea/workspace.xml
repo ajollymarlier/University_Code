@@ -4,13 +4,12 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="Removed many python-ta files">
+    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="Almost done a1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/a1/algorithms.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/algorithms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/a1/pyta_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/pyta_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/a1/sample_arrivals.csv" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/sample_arrivals.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/a1/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/a1/visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a1/visualizer.py" afterDir="false" />
     </list>
     <ignored path="csc148.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,36 +85,36 @@
     <session id="-2090683015">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="10" />
-          <entry key="project.open.time.6" value="6" />
+          <entry key="project.open.time.6" value="7" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="130" />
-          <entry key="csv" value="526" />
+          <entry key="csv" value="584" />
           <entry key="dummy" value="24" />
-          <entry key="py" value="27933" />
-          <entry key="txt" value="1717" />
+          <entry key="py" value="28682" />
+          <entry key="txt" value="1775" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2267" />
-          <entry key="Python" value="28063" />
+          <entry key="PLAIN_TEXT" value="2383" />
+          <entry key="Python" value="28812" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="8" />
+          <entry key="csv" value="9" />
           <entry key="html" value="5" />
           <entry key="md" value="2" />
           <entry key="nodeids" value="2" />
@@ -127,7 +126,7 @@
         <counts>
           <entry key="HTML" value="5" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="PLAIN_TEXT" value="17" />
           <entry key="Python" value="87" />
         </counts>
       </usages-collector>
@@ -142,10 +141,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="297" column="7" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+            <state relative-caret-position="-893">
+              <caret line="203" column="44" lean-forward="true" selection-start-line="203" selection-start-column="44" selection-end-line="203" selection-end-column="44" />
               <folding>
-                <marker date="1539888599213" expanded="true" signature="5210:5216" ph="..." />
+                <marker date="1539998349266" expanded="true" signature="5176:5182" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,26 +153,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/sample_arrivals.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="5491">
+              <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a1/sample_arrivals.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/a1/entities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="74" column="37" lean-forward="true" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+            <state relative-caret-position="314">
+              <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -227,9 +226,9 @@
         <option value="$PROJECT_DIR$/labs/lab5/time_lists.py" />
         <option value="$PROJECT_DIR$/preps/prep6/prep6.py" />
         <option value="$PROJECT_DIR$/assignments/a1/entities.py" />
-        <option value="$PROJECT_DIR$/assignments/a1/simulation.py" />
         <option value="$PROJECT_DIR$/assignments/a1/algorithms.py" />
         <option value="$PROJECT_DIR$/assignments/a1/sample_arrivals.csv" />
+        <option value="$PROJECT_DIR$/assignments/a1/simulation.py" />
       </list>
     </option>
   </component>
@@ -279,6 +278,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,7 +323,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,6 +409,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="entities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="csc148" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a1/entities.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="prep6" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -452,24 +472,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest max_length" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <module name="csc148" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep6" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep6/prep6.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="max_length" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_FUNCTION" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for a1_sample_test.test_pushy_passenger_moving_algorithm" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -487,18 +489,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.simulation" />
-      <item itemvalue="Python tests.Doctest max_length" />
       <item itemvalue="Python.prep6" />
       <item itemvalue="Python tests.pytest for a1_sample_test.test_pushy_passenger_moving_algorithm" />
       <item itemvalue="Python.algorithms" />
+      <item itemvalue="Python.entities" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.simulation" />
-        <item itemvalue="Python tests.pytest for a1_sample_test.test_pushy_passenger_moving_algorithm" />
+        <item itemvalue="Python.entities" />
         <item itemvalue="Python.algorithms" />
+        <item itemvalue="Python tests.pytest for a1_sample_test.test_pushy_passenger_moving_algorithm" />
         <item itemvalue="Python.prep6" />
-        <item itemvalue="Python tests.Doctest max_length" />
       </list>
     </recent_temporary>
   </component>
@@ -590,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539805027678</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Done bar python ta stuff">
+      <created>1539889191594</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1539889191594</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Almost done a1">
+      <created>1539993870415</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1539993870415</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -645,18 +661,18 @@
       <window_info id="TODO" order="4" weight="0.32826948" />
       <window_info anchor="bottom" id="Changes" order="0" />
       <window_info anchor="bottom" id="Application Servers" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49832326" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4966975" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32977304" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.50167674" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.5033025" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.50167674" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Find" order="4" weight="0.3293092" />
-      <window_info anchor="right" id="Debug" order="5" weight="0.38497654" />
+      <window_info anchor="right" id="Debug" order="5" weight="0.41985244" />
       <window_info anchor="right" id="Terminal" order="6" show_stripe_button="false" side_tool="true" weight="0.32977304" />
       <window_info anchor="right" id="Inspection" order="7" weight="0.4946695" />
       <window_info anchor="right" id="Event Log" order="8" show_stripe_button="false" side_tool="true" />
@@ -744,7 +760,9 @@
     <MESSAGE value="Done task 5 and updated python-ta" />
     <MESSAGE value="Finished PushyPassenger and debugging ShortSighted" />
     <MESSAGE value="Removed many python-ta files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed many python-ta files" />
+    <MESSAGE value="Done bar python ta stuff" />
+    <MESSAGE value="Almost done a1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done a1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1001,34 +1019,34 @@
         <state relative-caret-position="-1216" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/entities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="74" column="37" lean-forward="true" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="297" column="7" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+        <state relative-caret-position="-893">
+          <caret line="203" column="44" lean-forward="true" selection-start-line="203" selection-start-column="44" selection-end-line="203" selection-end-column="44" />
           <folding>
-            <marker date="1539888599213" expanded="true" signature="5210:5216" ph="..." />
+            <marker date="1539998349266" expanded="true" signature="5176:5182" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="343" column="40" selection-start-line="343" selection-start-column="40" selection-end-line="343" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/sample_arrivals.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="19">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a1/algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5491">
+          <caret line="368" lean-forward="true" selection-start-line="368" selection-end-line="368" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a1/entities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
         </state>
       </provider>
     </entry>

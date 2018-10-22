@@ -89,22 +89,22 @@ class RandomArrivals(ArrivalGenerator):
         arriving_people = dict()
         arriving_people[round_num] = []
 
-        #TODO might have to fix this at one point because random.sample
-        # produces unique numbers, so its impossible to have more than one
-        # person spawn on each floor
-
         # Creates a list 2 * the length of generations with each pair
         # representing a person with start and end values
-        people_info = random.sample(range(1, self.max_floor),
-                                    self.num_people * 2)
+        if self.num_people is not None:
+            people_info = random.sample(range(1, self.max_floor),
+                                        self.num_people * 2)
 
-        i = 0
-        while i < len(people_info):
-            arriving_people[round_num].append(Person(people_info[i],
-                                                     people_info[i + 1]))
-            i += 2
+            i = 0
+            while i < len(people_info):
+                arriving_people[round_num].append(Person(people_info[i],
+                                                         people_info[i + 1]))
+                i += 2
 
-        return arriving_people
+            return arriving_people
+
+        else:
+            return arriving_people
 
 
 class FileArrivals(ArrivalGenerator):
