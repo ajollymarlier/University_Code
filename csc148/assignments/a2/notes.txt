@@ -1,0 +1,13 @@
+Notes:
+
+Working on autocompletion
+
+- Take text and help autocomplete
+- Going to use tree-based data tructure
+
+Parts:
+1. Implementing a tree-pbased data structure called a "prefix-tree"
+2. Autocompleting musical melodies
+
+- Taking LOTR text and autocompleting
+- Every sentence is on one line

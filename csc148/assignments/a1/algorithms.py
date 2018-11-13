@@ -214,7 +214,7 @@ class RandomAlgorithm(MovingAlgorithm):
                                             Direction.STAY, Direction.UP])
 
             directions.append(chosen_dir)
-            elevators.floor += chosen_dir.value
+            elevator.floor += chosen_dir.value
 
         return directions
 
