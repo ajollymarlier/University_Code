@@ -226,19 +226,22 @@ class SimplePrefixTree(Autocompleter):
         0
         >>> t.weight
         0.0
-        >>> t.insert("caroL", 2.0, ['c', 'a', 'r', 'o', 'L'])
-        >>> t.insert("carol", 2.0, ['c', 'a', 'r', 'o', 'l'])
-        >>> t.insert("carol", 2.0, ['c', 'a', 'r', 'o', 'L'])
+        >>> t.insert("art", 3.0, ['a', 'r', 't'])
+        >>> t.insert("car", 3.0, ['c', 'a', 'r'])
+        >>> t.insert("caroL", 3.0, ['c', 'a', 'r', 'o', 'L'])
+        >>> t.insert("carol", 3.0, ['c', 'a', 'r', 'o', 'l'])
+        >>> t.insert("carol", 3.0, ['c', 'a', 'r', 'o', 'L'])
         >>> t.__len__()
-        1
+        3
         >>> t.insert("car", 3.0, ['c', 'a', 'r'])
         >>> t.subtrees[0].subtrees[0].subtrees[0].subtrees[0].subtrees[0].subtrees[0].value
         'carol'
         >>> t.__len__()
-        2
+        3
         >>> t.weight
-        4.5
-
+        6.0
+        >>> t._str_indented() # This is supposed to fail to show tree
+        3
         """
         # Sanitizes value and prefix to make all chars lowercase
         value = value.lower()
@@ -281,13 +284,148 @@ class SimplePrefixTree(Autocompleter):
             self.subtrees[len(self.subtrees) - 1].insert(value, weight, prefix)
 
         # Recalculates Weight after inserting
-        if self.weight_type == 'sum' and self.value == []:
+        if self.weight_type == 'sum':
             self.weight = self._get_sum_weights()
+            self.subtrees.sort(key=self._take_weight, reverse=True)
 
-        elif self.weight_type == 'average' and self.value == []:
+        elif self.weight_type == 'average':
             t = self._get_ave_weights()
             if t[1] != 0:
                 self.weight = t[0] / t[1]
+            self.subtrees.sort(key=self._take_weight, reverse=True)
+
+    def _take_weight(self, elem) -> float:
+        return elem.weight
+
+    # TODO do we need to find words that contain prefix not at start as well?
+    def autocomplete(self, prefix: List,
+                     limit: Optional[int] = None) -> List[Tuple[Any, float]]:
+        """ Return up to <limit> matches for the given prefix.
+
+            The return value is a list of tuples (value, weight), and must be
+            ordered in non-increasing weight. (You can decide how to break ties.)
+
+            If limit is None, return *every* match for the given prefix.
+
+            Precondition: limit is None or limit > 0.
+
+            >>> t = SimplePrefixTree('sum')
+            >>> t.autocomplete(['c'])
+            'Triple meme'
+            >>> t.insert("art", 3.0, ['a', 'r', 't'])
+            >>> t.insert("car", 3.0, ['c', 'a', 'r'])
+            >>> t.insert("caroL", 3.0, ['c', 'a', 'r', 'o', 'L'])
+            >>> t.insert("carol", 3.0, ['c', 'a', 'r', 'o', 'l'])
+            >>> t.insert("carol", 3.0, ['c', 'a', 'r', 'o', 'L'])
+            >>> t.insert("cards", 4.0, ['c', 'a', 'r', 'd', 's'])
+            >>> t.autocomplete(['a'])
+            'Quad Meme'
+            >>> t.autocomplete(['c', 'a', 'r'], 2)
+            'Double meme'
+            >>> t.insert("car", 3.0, ['c', 'a', 'r'])
+            >>> t.autocomplete(['c', 'a', 'r'], 2)
+            'Penta meme'
+            >>> t._str_indented()
+            'Meme'
+        """
+
+        # Outer level is just for finding prefix match
+        # This is run when matching prefix is found
+        if self.value == prefix:
+            # Adds all values in self.subtrees
+            return self._return_values(limit)
+
+        # If self.value is contained within prefix
+        elif self.value == prefix[0: len(self.value)]:
+            for subtree in self.subtrees:
+                if subtree.value == prefix[0: len(subtree.value)]:
+                    return subtree.autocomplete(prefix, limit)
+
+            # If self.value is part of prefix but there is no other parts
+            # IE. 'Car' exists but wanting to find 'Carol'
+            return []
+
+        # If prefix is not found at all in tree
+        else:
+            return []
+
+    # TODO This implementation still find all values but restricts after
+    # TODO should make it better so it stop searching once limit is reached
+    def _return_values(self, limit: Optional[int]) -> List[Tuple[Any, float]]:
+        """ Helper method to return a list of all values and
+            weights within self.subtrees
+        """
+        auto_values = list()
+        for subtree in self.subtrees:
+            # If subtree.value is a value
+            if type(subtree.value) != list:
+                # If there is no limit
+                if limit is None:
+                    auto_values.append((subtree.value, subtree.weight))
+
+                # If there is a limit and len(auto_values) < limit
+                elif limit is not None and len(auto_values) < limit:
+                    auto_values.append((subtree.value, subtree.weight))
+
+            # If subtree.value is a prefix
+            else:
+                lst = subtree._return_values(limit)
+
+                # If limit is not stated or adding lst to
+                # auto_values won't go over limit
+                if limit is None or len(auto_values) + len(lst) <= limit:
+                    auto_values.extend(lst)
+
+                # If adding all of lst to auto_values will go over limit
+                else:
+                    for i in range(limit - len(auto_values)):
+                        auto_values.append(lst[i])
+
+        return auto_values
+
+    # Should be working now
+    def remove(self, prefix: List) -> None:
+        """Remove all values that match the given prefix.
+         >>> t = SimplePrefixTree('sum')
+         >>> t.insert('a', 4.0, ['a'])
+         >>> t.insert('art', 4.0, ['a', 'r', 't'])
+         >>> t.insert('arts', 4.0, ['a', 'r', 't', 's'])
+         >>> t.insert('cat', 4.0, ['c', 'a', 't'])
+         >>> t.insert('cut', 4.0, ['c', 'u', 't'])
+         >>> t.subtrees[0].subtrees[1].value
+         'Meme'
+         >>> t.remove(['a', 'r', 't'])
+         >>> t._str_indented()
+         'Meme'
+        """
+        if self.value == prefix:
+            self.subtrees = list()
+
+        elif self.value == prefix[0: len(self.value)]:
+            for subtree in self.subtrees:
+                if subtree.value == prefix[0: len(subtree.value)]:
+                    subtree.remove(prefix)
+
+                # This is after the level below has been removed
+                # Thus if there exists an element,
+                # then it connects to some other branch
+                # TODO make sure that removing elem doesnt mess up iterating
+                if len(subtree.subtrees) == 0:
+                    self.subtrees.remove(subtree)
+
+            if self.weight_type == 'sum':
+                self.weight = self._get_sum_weights()
+
+            elif self.weight_type == 'average':
+                t = self._get_ave_weights()
+                if t[1] == 0:
+                    self.weight = 0.0
+
+                else:
+                    self.weight = t[0] / t[1]
+
+        else:
+            return None
 
     def is_empty(self) -> bool:
         """Return whether this simple prefix tree is empty."""

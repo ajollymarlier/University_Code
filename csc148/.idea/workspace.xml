@@ -4,10 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="pushing more stuff">
-      <change afterPath="$PROJECT_DIR$/lectures/week10/11_20_2018.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lectures/week9/notes.py" afterDir="false" />
+    <list default="true" id="749951f0-cf83-490c-93ab-44f565cd01be" name="Default" comment="Updating repo and finished task 1 on a2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/prefix_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a2/prefix_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/prefix_tree2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/pyta_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/a2/pyta_report.html" afterDir="false" />
     </list>
     <ignored path="csc148.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,16 +84,16 @@
     <session id="-2090683015">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="44" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="6" />
-          <entry key="project.open.time.5" value="21" />
-          <entry key="project.open.time.6" value="11" />
-          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.5" value="23" />
+          <entry key="project.open.time.6" value="13" />
+          <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="45" />
+          <entry key="project.opened" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -100,14 +101,14 @@
           <entry key="Python Console" value="219" />
           <entry key="csv" value="584" />
           <entry key="dummy" value="24" />
-          <entry key="py" value="45558" />
-          <entry key="txt" value="2108" />
+          <entry key="py" value="53940" />
+          <entry key="txt" value="2148" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2716" />
-          <entry key="Python" value="45777" />
+          <entry key="PLAIN_TEXT" value="2756" />
+          <entry key="Python" value="54159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -116,7 +117,7 @@
           <entry key="html" value="5" />
           <entry key="md" value="2" />
           <entry key="nodeids" value="2" />
-          <entry key="py" value="124" />
+          <entry key="py" value="135" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
@@ -125,7 +126,7 @@
           <entry key="HTML" value="5" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="124" />
+          <entry key="Python" value="135" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -136,6 +137,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/prefix_tree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a2/melody.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -145,20 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/prefix_tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2793">
-              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a2/autocomplete_engines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="40" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="40" />
+            <state relative-caret-position="285">
+              <caret line="189" column="33" lean-forward="true" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -225,6 +235,7 @@
         <option value="$PROJECT_DIR$/preps/prep10/prep10.py" />
         <option value="$PROJECT_DIR$/lectures/week10/11_20_2018.py" />
         <option value="$PROJECT_DIR$/assignments/a2/prefix_tree2.py" />
+        <option value="$PROJECT_DIR$/preps/prep11/prep11.py" />
         <option value="$PROJECT_DIR$/assignments/a2/prefix_tree.py" />
       </list>
     </option>
@@ -275,6 +286,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,19 +314,12 @@
               <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148" type="462c0819:PsiDirectoryNode" />
               <item name="preps" type="462c0819:PsiDirectoryNode" />
-              <item name="prep9" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148" type="462c0819:PsiDirectoryNode" />
-              <item name="preps" type="462c0819:PsiDirectoryNode" />
-              <item name="prep10" type="462c0819:PsiDirectoryNode" />
+              <item name="prep11" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,7 +365,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Doctest SimplePrefixTree.__len__">
+  <component name="RunManager" selected="Python tests.Doctest SimplePrefixTree.remove">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -402,25 +407,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest BinarySearchTree.count" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="prep11" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep11" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep9/prep9.py" />
-      <option name="CLASS_NAME" value="BinarySearchTree" />
-      <option name="METHOD_NAME" value="count" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep11/prep11.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest SimplePrefixTree.__len__" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctest SimplePrefixTree.remove" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -431,63 +439,63 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a2/prefix_tree.py" />
       <option name="CLASS_NAME" value="SimplePrefixTree" />
-      <option name="METHOD_NAME" value="__len__" />
+      <option name="METHOD_NAME" value="remove" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest SimplePrefixTree.insert (1)" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctest kth_smallest" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep11" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a2/prefix_tree2.py" />
-      <option name="CLASS_NAME" value="SimplePrefixTree" />
-      <option name="METHOD_NAME" value="insert" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep11/prep11.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="kth_smallest" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest SimplePrefixTree.insert" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctest mergesort3" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <module name="csc148" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/preps/prep11" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a2/prefix_tree.py" />
-      <option name="CLASS_NAME" value="SimplePrefixTree" />
-      <option name="METHOD_NAME" value="insert" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/preps/prep11/prep11.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="mergesort3" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Doctest BinarySearchTree.count" />
       <item itemvalue="Python.prefix_tree" />
-      <item itemvalue="Python tests.Doctest SimplePrefixTree.__len__" />
-      <item itemvalue="Python tests.Doctest SimplePrefixTree.insert" />
-      <item itemvalue="Python tests.Doctest SimplePrefixTree.insert (1)" />
+      <item itemvalue="Python tests.Doctest mergesort3" />
+      <item itemvalue="Python tests.Doctest kth_smallest" />
+      <item itemvalue="Python.prep11" />
+      <item itemvalue="Python tests.Doctest SimplePrefixTree.remove" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Doctest SimplePrefixTree.__len__" />
-        <item itemvalue="Python tests.Doctest SimplePrefixTree.insert" />
-        <item itemvalue="Python tests.Doctest SimplePrefixTree.insert (1)" />
+        <item itemvalue="Python tests.Doctest SimplePrefixTree.remove" />
         <item itemvalue="Python.prefix_tree" />
-        <item itemvalue="Python tests.Doctest BinarySearchTree.count" />
+        <item itemvalue="Python.prep11" />
+        <item itemvalue="Python tests.Doctest kth_smallest" />
+        <item itemvalue="Python tests.Doctest mergesort3" />
       </list>
     </recent_temporary>
   </component>
@@ -607,39 +615,46 @@
       <option name="project" value="LOCAL" />
       <updated>1542135936263</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Updating repo and finished task 1 on a2">
+      <created>1542764730015</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542764730015</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 35m 26s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 37m 42s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 35m 37s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 43m 23s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 36m 27s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 43m 25s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 39m 37s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 44m 04s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 40m 24s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 45m 44s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 41m 03s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 45m 52s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 41m 45s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 46m 03s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 42m 07s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 46m 21s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree_insert - 2018.11.20 at 20h 42m 30s.xml">
-      <configuration name="Doctest SimplePrefixTree.insert" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 46m 28s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctest_SimplePrefixTree___len__ - 2018.11.20 at 20h 42m 45s.xml">
-      <configuration name="Doctest SimplePrefixTree.__len__" configurationId="tests" />
+    <history-entry file="Doctest_SimplePrefixTree_remove - 2018.11.26 at 12h 47m 17s.xml">
+      <configuration name="Doctest SimplePrefixTree.remove" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -666,14 +681,14 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32977304" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.5033025" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.5033025" side_tool="true" weight="0.53824365" />
       <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.50167674" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Find" order="4" weight="0.3293092" />
-      <window_info anchor="right" id="Debug" order="5" weight="0.3943662" />
+      <window_info anchor="right" id="Debug" order="5" weight="0.4225352" />
       <window_info anchor="right" id="Terminal" order="6" show_stripe_button="false" side_tool="true" weight="0.32977304" />
       <window_info anchor="right" id="Inspection" order="7" weight="0.4946695" />
       <window_info anchor="right" id="Event Log" order="8" show_stripe_button="false" side_tool="true" />
@@ -765,7 +780,8 @@
     <MESSAGE value="Almost done a1" />
     <MESSAGE value="Finished a1" />
     <MESSAGE value="pushing more stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing more stuff" />
+    <MESSAGE value="Updating repo and finished task 1 on a2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating repo and finished task 1 on a2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -774,11 +790,6 @@
           <url>file://$PROJECT_DIR$/preps/prep8/prep8.py</url>
           <line>213</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/assignments/a2/prefix_tree2.py</url>
-          <line>266</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -791,14 +802,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/labs/lab2/pyta_report.html" />
-    <entry file="file://$PROJECT_DIR$/labs/lab3/lab3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preps/prep2/pyta_report.html" />
     <entry file="file://$PROJECT_DIR$/preps/prep3/.pytest_cache/v/cache/nodeids">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1043,9 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding>
-            <marker date="1542728244852" expanded="true" signature="1028:1278" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,6 +1053,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2166">
           <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/prefix_tree2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="281" lean-forward="true" selection-start-line="238" selection-start-column="8" selection-end-line="281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-302556683/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="289" column="4" selection-start-line="289" selection-start-column="4" selection-end-line="289" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/preps/prep11/prep11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="164" column="37" selection-start-line="164" selection-start-column="37" selection-end-line="164" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1065,15 +1086,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/autocomplete_engines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="40" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/prefix_tree2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="281" lean-forward="true" selection-start-line="238" selection-start-column="8" selection-end-line="281" />
+        <state relative-caret-position="285">
+          <caret line="189" column="33" lean-forward="true" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1086,8 +1100,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/prefix_tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2793">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="130">
+          <caret line="385" column="27" selection-start-line="385" selection-start-column="27" selection-end-line="385" selection-end-column="27" />
         </state>
       </provider>
     </entry>
