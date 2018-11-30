@@ -61,12 +61,21 @@ class LetterAutocompleteEngine:
         Note that it is possible for the same string to appear on more than
         one line of the input file; this would result in that string getting
         a larger weight (because of how Autocompleter.insert works).
+
+        >>> import sys
+        >>> sys.setrecursionlimit(5000)
+        >>> a = LetterAutocompleteEngine({'file': 'data/lotr.txt', 'autocompleter': 'simple', 'weight_type': 'sum'})
         """
         # We've opened the file for you here. You should iterate over the
         # lines of the file and process them according to the description in
         # this method's docstring.
+        self.autocompleter = SimplePrefixTree(config['weight_type'])
+
         with open(config['file'], encoding='utf8') as f:
-            pass
+            for line in f:
+                sanitized_t = _sanitize(line)
+                self.autocompleter.insert(sanitized_t[0].lower(), 1.0,
+                                          [x.lower() for x in sanitized_t[1]])
 
     def autocomplete(self, prefix: str,
                      limit: Optional[int] = None) -> List[Tuple[str, float]]:
@@ -84,7 +93,7 @@ class LetterAutocompleteEngine:
             limit is None or limit > 0
             <prefix> contains only lowercase alphanumeric characters and spaces
         """
-        pass
+        return self.autocompleter.autocomplete(list(prefix), limit)
 
     def remove(self, prefix: str) -> None:
         """Remove all strings that match the given prefix string.
@@ -95,7 +104,7 @@ class LetterAutocompleteEngine:
         Precondition: <prefix> contains only lowercase alphanumeric characters
                       and spaces.
         """
-        pass
+        self.autocompleter.remove(list(prefix))
 
 
 class SentenceAutocompleteEngine:
@@ -144,7 +153,14 @@ class SentenceAutocompleteEngine:
         """
         # We haven't given you any starter code here! You should review how
         # you processed CSV files on Assignment 1.
-        pass
+        self.autocompleter = SimplePrefixTree(config['weight_type'])
+        with open(config['file']) as csvfile:
+            reader = csv.reader(csvfile)
+            for line in reader:
+                sanitized_t = _sanitize(line[0])
+                weight = line[1]
+                self.autocompleter.insert(sanitized_t[0].lower(), float(weight),
+                                          [x.lower() for x in sanitized_t[1]])
 
     def autocomplete(self, prefix: str,
                      limit: Optional[int] = None) -> List[Tuple[str, float]]:
@@ -162,7 +178,7 @@ class SentenceAutocompleteEngine:
             limit is None or limit > 0
             <prefix> contains only lowercase alphanumeric characters and spaces
         """
-        pass
+        return self.autocompleter.autocomplete(list(prefix), limit)
 
     def remove(self, prefix: str) -> None:
         """Remove all strings that match the given prefix.
@@ -173,12 +189,13 @@ class SentenceAutocompleteEngine:
         Precondition: <prefix> contains only lowercase alphanumeric characters
                       and spaces.
         """
-        pass
+        self.remove(prefix)
 
 
 ################################################################################
 # Melody-based Autocomplete Engines (Task 5)
 ################################################################################
+# TODO needs testing but seems to be working
 class MelodyAutocompleteEngine:
     """An autocomplete engine that suggests melodies based on a few intervals.
 
@@ -219,7 +236,31 @@ class MelodyAutocompleteEngine:
         """
         # We haven't given you any starter code here! You should review how
         # you processed CSV files on Assignment 1.
-        pass
+        self.autocompleter = SimplePrefixTree(config['weight_type'])
+        with open(config['file']) as csvfile:
+            reader = csv.reader(csvfile)
+            for line in reader:
+                name = line[0]
+                notes = list()
+                i = 1
+                while i < len(line):
+                    if line[i] == '' or line[i + 1] == '':
+                        break
+                    else:
+                        notes.append((int(line[i]), int(line[i + 1])))
+                        i += 2
+
+                self.autocompleter.insert(Melody(name, notes), 1.0,
+                                          self._get_intervals(notes))
+
+    def _get_intervals(self, notes: List[Tuple[int, int]]) -> List[int]:
+        """Helper method to find intervals of notes"""
+        intervals = list()
+        for i in range(len(notes) - 1):
+            intervals.append(notes[i + 1][0] - notes[i][0])
+
+        return intervals
+
 
     def autocomplete(self, prefix: List[int],
                      limit: Optional[int] = None) -> List[Tuple[Melody, float]]:
@@ -233,14 +274,27 @@ class MelodyAutocompleteEngine:
         Precondition:
             limit is None or limit > 0
         """
-        pass
+        return self.autocompleter.autocomplete(prefix, limit)
 
     def remove(self, prefix: List[int]) -> None:
         """Remove all melodies that match the given interval sequence.
         """
-        pass
+        self.autocompleter.remove(prefix)
 
 
+# === Helper method for Letter and Sentence Autocomplete ===
+def _sanitize(line: str) -> Tuple[str, List[Any]]:
+    """Helper method to sanitize line of input and return list
+        according to letter blueprint
+    """
+    sanitized_str = ""
+    sanitized_lst = list()
+    for char in line:
+        if char.isalnum() or char == " ":
+            sanitized_str += char.lower()
+            sanitized_lst.append(char.lower())
+
+    return sanitized_str, sanitized_lst
 ###############################################################################
 # Sample runs
 ###############################################################################
@@ -249,9 +303,10 @@ def sample_letter_autocomplete() -> List[Tuple[str, float]]:
     engine = LetterAutocompleteEngine({
         # NOTE: you should also try 'data/google_no_swears.txt' for the file.
         'file': 'data/lotr.txt',
-        'autocompleter': 'simple',
+        'autocompleter': 'compressed',
         'weight_type': 'sum'
     })
+
     return engine.autocomplete('frodo d', 20)
 
 
@@ -259,20 +314,21 @@ def sample_sentence_autocomplete() -> List[Tuple[str, float]]:
     """A sample run of the sentence autocomplete engine."""
     engine = SentenceAutocompleteEngine({
         'file': 'data/google_searches.csv',
-        'autocompleter': 'simple',
+        'autocompleter': 'compressed',
         'weight_type': 'sum'
     })
-    return engine.autocomplete('how to', 20)
+
+    return engine.autocomplete('how', 20)
 
 
 def sample_melody_autocomplete() -> None:
     """A sample run of the melody autocomplete engine."""
     engine = MelodyAutocompleteEngine({
         'file': 'data/random_melodies_c_scale.csv',
-        'autocompleter': 'simple',
+        'autocompleter': 'compressed',
         'weight_type': 'sum'
     })
-    melodies = engine.autocomplete([2, 2], 20)
+    melodies = engine.autocomplete([0, 6], 20)
     for melody, _ in melodies:
         melody.play()
 
@@ -289,6 +345,6 @@ if __name__ == '__main__':
     import sys
     sys.setrecursionlimit(5000)
 
-    # print(sample_letter_autocomplete())
-    # print(sample_sentence_autocomplete())
-    # sample_melody_autocomplete()
+    print(sample_letter_autocomplete())
+    #print(sample_sentence_autocomplete())
+    #sample_melody_autocomplete()
