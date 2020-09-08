@@ -1,0 +1,248 @@
+#########
+# Step 1
+Code affected: none
+Created this file.
+
+#########
+# Step 2
+Code affected: all .java files
+Reformatted using the Google Java style formatter.
+
+#########
+# Step 3
+Code affected: Fish.turnAround
+Flaw: unnecessary if, leading to duplicate code.
+Fix: replaced if statement with a single assignment statement.
+
+#########
+# Step 4
+Code affected: HungryFish.java, Bubble.java
+Flaw: Misspelled words in comments and printed output messages
+Fix: Fixed spelling of these sentences
+
+#########
+# Step 5
+Code affected: HungryFish.java, Fish.java
+Flaw: HungryFish class had duplicate methods from Fish class
+Fix: Made HungryFish extend Fish and removed redundant methods/attributes
+
+#########
+# Step 6
+Code affected: Bubble.java
+Flaw: Class contained redundant variable assignment
+Fix: Removed redundant code snippet
+
+#########
+# Step 7
+Code affected: Seaweed.java
+Flaw: Ambiguous variable name for number of seaweed segments
+Fix: Renamed variable name from 'l' to 'numSegments'
+
+#########
+# Step 8
+Code affected: FishTankManager.java
+Flaw: If statement blocks borderline-impossible to read
+Fix: Refactored if statements to improve readability
+
+#########
+# Step 9
+Code affected: Seaweed.java
+Flaw: Misspelled comment
+Fix: Fixed spelling
+
+#########
+# Step 10
+Code affected: FishTankManager.java, Fish.java
+Flaw: name for Fish Object storage device was too ambiguous
+Fix: Renamed to 'activeFish' and adjusted all references accordingly
+
+#########
+# Step 11
+Code affected: Bubble.java, Fish.java, Seaweed.java, FishTankManager.java, TankItem.java(NEW)
+Flaw: FishTankManager storage structure was too wide in object type scope
+Fix: Created new abstract class 'TankItem.java' with two abstract methods, 'draw(), drawString()'
+     and made Fish, Bubble, Seaweed, extend TankItem, and made 2d array 'activeFish',
+     type TankItem[][]
+
+#########
+# Step 12
+Code affected: Bubble.java, Fish.java, Seaweed.java, FishTankManager.java
+Flaw: Instance variables were either public or not specified at all
+Fix: Changed all instance variables to private or protected and implemented
+        relevant getters and setters
+
+#########
+# Step 13
+Code affected: Bubble.java, Fish.java, HungryFish.Java, Seaweed.java, FishTankManager.java,
+                MainThread.java
+Flaw: Instance variables were suggested to be package private
+Fix: Changed all suggested instance variables and methods to package-private
+
+#########
+# Step 14
+Code affected: Seaweed.java
+Flaw: If/else block in draw() was confusing and had redundant if statements
+Fix: Cleaned up statements and implemented more efficient if else condition flow
+
+#########
+# Step 15
+Code affected: Bubble.java
+Flaw: Missed some suggested visibility modifier changes
+Fix: Changed them to package-private
+
+#########
+# Step 16
+Code affected: Bubble.java, HungryFish.java, Fish.java, Seaweed.java, TankItem.java,
+               FishTankManager.java
+Flaw: Too much casting in FishTankManager
+Fix: Added relevant methods to the superclass TankItem.java and removed
+     casting from FishTankManager.java.
+
+#########
+# Step 17
+Code affected: Bubble.java, HungryFish.java, Fish.java, Seaweed.java, TankItem.java
+Flaw: Inconsistent coordinate variable names
+Fix: changed all coordinate variable names to x and y
+
+#########
+# Step 18
+Code affected: Bubble.java, Fish.java, Seaweed.java, TankItem.java
+Flaw: Duplicate coordinate names in subclasses
+Fix: added x and y coordinates to TankItem and removed all local references in subclasses
+
+#########
+# Step 19
+Code affected: Bubble.java, Fish.java, Seaweed.java, TankItem.java
+Flaw: Bug where new coordinate system had flipped axis
+Fix: fixed all necessary draw errors
+
+#########
+# Step 20
+Code affected: Fish.java, HungryFish.java
+Flaw: String concatenation in loop
+Fix: Implemented StringBuilder object to improve efficiency
+
+#########
+# Step 21
+Code affected: Fish.java, HungryFish.java
+Flaw: Near-duplicate reverseAppearance() methods
+Fix: Called super.reverseAppearance() in subclass and kept non-duplicate code
+
+#########
+# Step 22
+Code affected: FishTankManager.java, Fish.java, HungryFish.java
+Flaw: Static implementation of activeFish array limit scope
+Fix: Made activeFish non-static and made resultant fixes
+
+#########
+# Step 23
+Code affected: FishTankManager.java
+Flaw: Unnecessarily long if block
+Fix: Made if block more efficient
+
+#########
+# Step 24
+Code affected: HungryFish.java
+Flaw: Unused imports listed
+Fix: Removed unused imports
+
+#########
+# Step 25
+Code affected: Bubble.java, Seaweed.java, TankItem.java, FishTankManager.java
+Flaw: Unnecessary casting of items.
+Fix: Implemented one unified float method under Bubble.java and renamed it move().
+             Then implemented move in super class TankItem to reduce casting in FishTankManager.
+
+#########
+# Step 26
+Code affected: FishTankManager.java
+Flaw: update() if block too long
+Fix: Made if block more efficient by removing most instance checks
+
+#########
+# Step 27
+Code affected: FishTankManager.java, Bubble.java, HungryFish.java, Fish.java
+Flaw: non-descriptive naming of variables
+Fix: renamed variables to better names
+
+#########
+# Step 28
+Code affected: HungryFish.java
+Flaw: Duplicate move() method from parent class
+Fix: removed duplicate move() method
+
+#########
+# Step 29
+Code affected: Fish.java, FishTankManager.java
+Flaw: 2d array implementation of active fish was inefficient and lead to errors
+Fix: made activeFish an ArrayList and made subsequent changes to traversal
+
+#########
+# Step 30
+Code affected: Seaweed.java, FishTankManager.java
+Flaw: Had unused import and unused variable
+Fix: Removed both import and variable
+
+#########
+# Step N-1 (part 1)
+Code affected: Bubble.java, Fish.java
+Flaw: Manager logged bubbles even after leaving the screen
+Fix: Removed bubbles from activeFish when they leave the screen
+
+#########
+# Step N-1 (part 2)
+Code affected: Bubble.java, Fish.java
+Flaw: Fish were swimming off screen without turning around and calculation error was
+        made in bubble removal
+Fix: Fixed calculation error and forced fish to turn around at tank boundaries
+
+#########
+# Step 33
+Code affected: FishTankManager.java
+Flaw: methods getWidth() and getHeight() were unnecessarily public
+Fix: Converted both method's visibility modifier to package-private
+
+#########
+# Step 34
+Code affected: notes.txt
+Flaw: All steps after step 4 were not numbered
+Fix: Numbered subsequent steps
+
+#########
+# Step 35
+Code affected: HungryFish.java
+Flaw: Redundant draw method()
+Fix: Removal of draw method()
+
+#########
+# Step N
+New Class 'VeggieFish.java'
+Identity: This is a vegetarian fish that loves to eat seaweed.
+Behaviour: - Travels towards Seaweed item and 'eats' it (removes it from activeFish)
+             when arriving at its location.
+           - Once all seaweed is eaten, the class behaves like a normal fish.
+           - Fish also faces target seaweed object as it approaches.
+
+#########
+# Step 37
+Code affected: Bubble.java, TankItem.java, HungryFish.java
+Flaw: Had unused import and unclear comments
+Fix: Fixed comments and removed unused import
+
+#########
+# Step 38
+Code affected: Fish.java, VeggieFish.java, TankItem.java
+Flaw: Some methods and instance variables were not commented
+Fix: Added relevant comments
+
+#########
+# Step N + 1
+Code affected: HungryFish.java, Fish.java, VeggieFish.java
+Code Smell: Duplicate code was present in the form of turnAround() in both Fish, and it's subclasses
+Fix: Removed turnAround from subclasses of Fish, causing it's parent method to be called
+
+#########
+# Step 40
+Code affected: HungryFish.java, Fish.java
+Flaw: Visibility modifiers were not optimized
+Fix: Adjusted visibility modifiers
