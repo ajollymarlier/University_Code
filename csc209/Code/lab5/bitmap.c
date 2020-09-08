@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "bitmap.h"
+
+
+/*
+ * Read in the location of the pixel array, the image width, and the image 
+ * height in the given bitmap file.
+ */
+//TODO needs testing
+void read_bitmap_metadata(FILE *image, int *pixel_array_offset, int *width, int *height) {
+    if(fseek(image, 10, SEEK_SET) != 0){ //Sets position to byte 10
+        fprintf(stderr, "Jump to pixel array offset failed.\n");
+        exit(1);
+    } 
+
+    fread(pixel_array_offset, sizeof(int), 1, image); //Reads pixel array start location
+    
+    if(fseek(image, 18, SEEK_SET) != 0){ //Jumps to image dimension data
+        fprintf(stderr, "Jump to photo dimension data failed.\n");
+        exit(1);
+    } 
+
+    fread(width, sizeof(int), 1, image); //Reads image height metadata
+    fread(height, sizeof(int), 1, image); //Reads image width metadata
+}
+
+/*
+ * Read in pixel array by following these instructions:
+ *
+ * 1. First, allocate space for m `struct pixel *` values, where m is the 
+ *    height of the image.  Each pointer will eventually point to one row of 
+ *    pixel data.
+ * 2. For each pointer you just allocated, initialize it to point to 
+ *    heap-allocated space for an entire row of pixel data.
+ * 3. Use the given file and pixel_array_offset to initialize the actual 
+ *    struct pixel values. Assume that `sizeof(struct pixel) == 3`, which is 
+ *    consistent with the bitmap file format.
+ *    NOTE: We've tested this assumption on the Teaching Lab machines, but 
+ *    if you're trying to work on your own computer, we strongly recommend 
+ *    checking this assumption!
+ * 4. Return the address of the first `struct pixel *` you initialized.
+ */
+struct pixel **read_pixel_array(FILE *image, int pixel_array_offset, int width, int height) {
+    /*struct pixel **pixArr = malloc(sizeof(struct pixel **));
+    return pixArr;*/
+    if(fseek(image, pixel_array_offset, SEEK_SET) != 0){
+        fprintf(stderr, "Jump to pixel array failed.\n");
+        exit(1);
+    }
+
+    struct pixel **pixArr = malloc(sizeof(struct pixel *) * height);
+
+    for (int i = 0; i < height; i++){
+        pixArr[i] = malloc(sizeof(struct pixel) * width);
+        for(int j = 0; j < width; j++){
+            fread(&(pixArr[i][j]), sizeof(struct pixel), 1, image);
+        }
+    }
+
+    return pixArr;
+}
+
+
+/*
+ * Print the blue, green, and red colour values of a pixel.
+ * You don't need to change this function.
+ */
+void print_pixel(struct pixel p) {
+    printf("(%u, %u, %u)\n", p.blue, p.green, p.red);
+}

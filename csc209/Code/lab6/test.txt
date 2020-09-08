@@ -1,0 +1,14 @@
+Script started on 2020-02-13 21:22:55-0500
+]0;jollymar@The-Diamond: ~/Desktop[01;32mjollymar@The-Diamond[00m:[01;34m~/Desktop[00m$ ls
+[0m[01;34mcsc209[0m  [01;34mcsc343[0m             ssh_addresses.txt  [01;34mUniversity_Code[0m
+[01;34mcsc236[0m  [01;34mfun_docs[0m           [01;34msta247[0m             [01;32mupdate.sh[0m
+[01;34mcsc318[0m  [01;34mPersonal-Projects[0m  test.c
+]0;jollymar@The-Diamond: ~/Desktop[01;32mjollymar@The-Diamond[00m:[01;34m~/Desktop[00m$ cd csc209/jollt[Kymar/lab6
+]0;jollymar@The-Diamond: ~/Desktop/csc209/jollymar/lab6[01;32mjollymar@The-Diamond[00m:[01;34m~/Desktop/csc209/jollymar/lab6[00m$ ./copy 5 HelllO
+Hell
+]0;jollymar@The-Diamond: ~/Desktop/csc209/jollymar/lab6[01;32mjollymar@The-Diamond[00m:[01;34m~/Desktop/csc209/jollymar/lab6[00m$ ./copy 5 HelllO[1P HelllO1 HelllO5 HelllO
+HelllO
+]0;jollymar@The-Diamond: ~/Desktop/csc209/jollymar/lab6[01;32mjollymar@The-Diamond[00m:[01;34m~/Desktop/csc209/jollymar/lab6[00m$ exit
+exit
+
+Script done on 2020-02-13 21:23:44-0500

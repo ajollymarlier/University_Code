@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "life2d_helpers.h": "c"
+    }
+}
