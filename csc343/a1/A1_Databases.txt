@@ -1,0 +1,82 @@
+-- this is an example
+
+group: A1 sample relations
+
+
+Collection = {
+	CID:number, date:string, SID:number
+	1, "12/18/2017", 1
+	2, "05/31/2009", 3
+    3, "09/15/2008", 3
+	4, "02/24/2009", 4
+    5, "10/18/2015", 6
+	6, "04/10/2019", 1
+}
+
+Collected = {
+	CID:number, AN:number
+	1, 4
+    2, 6
+    3, 1
+	4, 2
+    5, 3
+	6, 5
+}
+
+Artifact = {
+	AN:number, species:string, type:string, location:string, SID:number
+	4, "Panthera leo", tissue, "Sierra Leone", 2
+	6, "Panthera pardus", image, "DR Congo", 1
+    1, "Carcharodon carcharias", model, "New Zealand", 4
+    2, "Falco peregrinus", image, "Canada", 3
+    3, "Apis mellifera", tissue, "Poland", 1
+    5, "Myrmica rubra", live, "Northern Ireland", 3
+}
+
+Published = {
+	AN:number, journal:string, date:string
+	4,  "Animals Weekly", "04/12/2004"
+    1, "National Geographic", "04/20/2002"
+    2,  "Blue Planet", "06/24/1969"
+    3, "The Varsity", "11/11/2011"
+    5,  "Washington Post", "12/21/1999"
+    6, "r/nature", "07/17/2007"
+}
+
+Staff = {
+	SID:number, name:string, email:string, rank:string, date:string
+	1, Clarence, "clarence@website.com", technician, "01/10/2012"
+	2, Reginald, "reginald@website.com", technician, "01/13/2020"
+    3, William, "william@website.com", student, "11/11/2002"
+	4, Gladys, "gladys@website.com", pre-tenure, "05/21/2008"
+    5, Yann, "yann@website.com", tenure, "03/30/2015"
+	6, Sarah, "sarah@website.com", tenure, "05/12/2001"
+}
+
+COL = {
+	family:string
+	Panthera
+    Chondrichthyes
+    Falcon
+    Apis
+    Solenopsis
+}
+
+Genus = {
+	genus:string, family:string
+    Panthera, Felidae
+    "White Sharks", "Mackerel Sharks"
+    Falcon, "Falcons and Caracaras"
+    Apis, Apidae
+    Solenopsis, Ant
+}
+
+Species = {
+	species:string, genus:string 
+	"Panthera leo",  Panthera
+	"Panthera pardus", Panthera
+    "Carcharodon carcharias", "White Sharks"
+    "Falco peregrinus", Falcon
+    "Apis mellifera", Apis
+    "Myrmica rubra", Solenopsis
+}

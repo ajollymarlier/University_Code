@@ -1,0 +1,53 @@
+ air1_code | air1_city | air2_code | air2_city | f1_id |      f1_s_dep       |      f1_s_arv       | outbound | inbound | f1_id | f1_s_dep | f1_s_arv | outbound | inbound 
+-----------+-----------+-----------+-----------+-------+---------------------+---------------------+----------+---------+-------+----------+----------+----------+---------
+ YYZ       | Toronto   | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YYZ       | Toronto   | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YYZ       | Toronto   | YVR       | Vancouver |     9 | 2020-04-30 07:00:00 | 2020-04-30 12:15:00 | YYZ      | YVR     |       |          |          |          | 
+ YYZ       | Toronto   | LGA       | New York  |     6 | 2020-04-30 15:00:00 | 2020-04-30 16:15:00 | YYZ      | LGA     |       |          |          |          | 
+ YYZ       | Toronto   | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ YYZ       | Toronto   | ORD       | Chicago   |     7 | 2020-04-30 10:00:00 | 2020-04-30 10:45:00 | YYZ      | ORD     |       |          |          |          | 
+ YYZ       | Toronto   | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | LGA       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ YTZ       | Toronto   | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | LGA       | New York  |    10 | 2020-04-30 14:00:00 | 2020-04-30 20:15:00 | YVR      | LGA     |       |          |          |          | 
+ YVR       | Vancouver | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ YVR       | Vancouver | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | LGA       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ LGA       | New York  | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | LGA       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ JFK       | New York  | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | LGA       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ ORD       | Chicago   | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | YYZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | YTZ       | Toronto   |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | YVR       | Vancouver |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | LGA       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | JFK       | New York  |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | ORD       | Chicago   |       |                     |                     |          |         |       |          |          |          | 
+ BUF       | Buffalo   | BUF       | Buffalo   |       |                     |                     |          |         |       |          |          |          | 
+(49 rows)
+
